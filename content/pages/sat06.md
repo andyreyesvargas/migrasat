@@ -582,11 +582,6 @@ User role [Oracle Database Admins] deleted.
 <br>**-** Asociar el rol al usuario dbasuser 
 <br>
 
-<br>
-<br> Crear el Rol Database Admins
 
-<br> Asignar los filtros view_lifecycle_environments, create_lifecycle_environments, destroy_lifecycle_environments, edit_lifecycle_environments al rol Database Admins
-
-<br> Asociar el rol Database Admins al usuario dbauser
 
 <p><br><a href="sat.md">volver</a></p>
