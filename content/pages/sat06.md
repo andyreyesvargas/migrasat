@@ -181,29 +181,35 @@ Invalid credentials, continuing with session for 'andy.reyes'.
 [root@satellite ~]# hammer auth login basic --username andy.reyes --password redhat123
 Successfully logged in as 'andy.reyes'.
 [root@satellite ~]# hammer user list
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-ID | LOGIN         | NAME          | EMAIL                     | ADMIN | LAST LOGIN          | AUTHORIZED BY
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-4  | admin         | Admin User    | root@opennova.pe          | yes   | 2020/08/29 16:38:26 | Internal
-8  | andy.reyes    | Andy Reyes    | andy.reyes@opennova.pe    | yes   | 2020/08/29 17:14:23 | Internal
-5  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | 2020/08/29 02:01:47 | Internal
----|---------------|---------------|---------------------------|-------|---------------------|--------------
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+ID | LOGIN         | NAME          | EMAIL                     | ADMIN | DISABLED | LAST LOGIN          | AUTHORIZED BY
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+4  | admin         | Admin User    | root@migraciones09.gob.pe | yes   | no       | 2026/10/13 16:02:10 | Internal
+7  | andy.reyes    | Andy Reyes    | andy.reyes@opennova.pe    | yes   | no       | 2026/10/13 16:15:28 | Internal
+6  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | no       | 2026/10/07 21:42:03 | Internal
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
 ```
 
 Borrar el usuario andy.reyes
 ```
 [root@satellite ~]# hammer user delete --login andy.reyes
+Could not delete the user:
+  Access denied
+  You are trying to delete your own account
+[root@satellite ~]# hammer auth login basic --username admin --password redhat
+Successfully logged in as 'admin'.
+[root@satellite ~]# hammer user delete --login andy.reyes
 User [andy.reyes] deleted.
 ```
-Listar las organizaciones para validar
+Listar los usuarios para validar
 ```
 [root@satellite ~]# hammer user list
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-ID | LOGIN         | NAME          | EMAIL                     | ADMIN | LAST LOGIN          | AUTHORIZED BY
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-4  | admin         | Admin User    | root@opennova.pe          | yes   | 2020/08/29 16:38:26 | Internal
-5  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | 2020/08/29 02:01:47 | Internal
----|---------------|---------------|---------------------------|-------|---------------------|--------------
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+ID | LOGIN         | NAME          | EMAIL                     | ADMIN | DISABLED | LAST LOGIN          | AUTHORIZED BY
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+4  | admin         | Admin User    | root@migraciones09.gob.pe | yes   | no       | 2026/10/13 16:16:36 | Internal
+6  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | no       | 2026/10/07 21:42:03 | Internal
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
 ```
 
 # Crear Grupos de usuarios en Satellite por GUI. (Demostrativo)
