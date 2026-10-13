@@ -82,6 +82,21 @@ Esta sincronización puede demorar minutos u horas dependiendo del tamaño del r
 
 Como recomendación final, cuando los recursos de computo son limitados, se recomienda sincronizar un repositorio a la vez
 
+# Asignando manifiestos a organizaciones por CLI. (Demostrativo)
+Autenticarse utilizando la herramienta hammer
+```
+[root@satellite ~]# hammer auth login basic
+[Foreman] Username: admin
+[Foreman] Password for admin:
+Successfully logged in as 'admin'.
+```
+Crear usuario con los datos que se muestran en la siguiente salida.
+
+```
+[root@satellite ~]# hammer user create --login andy.reyes --firstname Andy --lastname Reyes --mail andy.reyes@opennova.pe --default-organization 'Migraciones' --default-location 'Lima' --password redhat --auth-source 'Internal' --admin true
+User [andy.reyes] created.
+```
+
 # Laboratorio
 <br>- Con lo aprendido en esta lección, importe los manifiestos disponibles para las organizaciones Aplicaciones y Cajeros
 <br>- Active los repositorios básicos de RHEL8 para la organización Aplicaciones
