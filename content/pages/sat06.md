@@ -415,7 +415,7 @@ Successfully logged in as 'admin'.
 ```
 Crear el rol **Database Admins** con los datos que se muestran en la siguiente salida.
 ```
-[root@satellite ~]# hammer role create --name 'Database Admins' --description 'Administradores de Base de Datos' --organization 'Default Organization' --location 'Default Location'
+[root@satellite ~]# hammer role create --name 'Database Admins' --description 'Administradores de Base de Datos' --organization 'Migraciones' --location 'Lima'
 User role [Database Admins] created.
 ```
 Listar los roles para validar
@@ -424,27 +424,27 @@ Listar los roles para validar
 ---|--------------------------------|--------
 ID | NAME                           | BUILTIN
 ---|--------------------------------|--------
-27 | Access Insights Admin          | no
-26 | Access Insights Viewer         | no
 16 | Ansible Roles Manager          | no
 17 | Ansible Tower Inventory Reader | no
-32 | Application Admins             | no
+33 | Application Admins             | no
 11 | Auditor                        | no
 10 | Bookmarks manager              | no
-24 | Boot disk access               | no
-29 | Compliance manager             | no
-28 | Compliance viewer              | no
-30 | Create ARF report              | no
-33 | Database Admins                | no
+18 | Boot disk access               | no
+22 | Compliance manager             | no
+21 | Compliance viewer              | no
+26 | Content Exporter               | no
+25 | Content Importer               | no
+23 | Create ARF report              | no
+34 | Database Admins                | no
 1  | Default role                   | yes
-19 | Discovery Manager              | no
-18 | Discovery Reader               | no
+20 | Discovery Manager              | no
+19 | Discovery Reader               | no
 7  | Edit hosts                     | no
 5  | Edit partition tables          | no
+27 | ForemanRhCloud                 | no
 2  | Manager                        | no
 3  | Organization admin             | no
-25 | Red Hat Access Logs            | no
-20 | Register hosts                 | no
+24 | Register hosts                 | no
 15 | Remote Execution Manager       | no
 14 | Remote Execution User          | no
 9  | Site manager                   | no
@@ -453,9 +453,11 @@ ID | NAME                           | BUILTIN
 13 | Tasks Reader                   | no
 8  | Viewer                         | no
 6  | View hosts                     | no
-22 | Virt-who Manager               | no
-21 | Virt-who Reporter              | no
-23 | Virt-who Viewer                | no
+29 | Virt-who Manager               | no
+28 | Virt-who Reporter              | no
+30 | Virt-who Viewer                | no
+32 | Webhooks Manager               | no
+31 | Webhooks Reader                | no
 ---|--------------------------------|--------
 ```
 También se puede simplificar la vista con el siguiente comando
@@ -470,11 +472,11 @@ ID | NAME            | BUILTIN
 Listar el permiso **access dashboard**
 ```
 [root@satellite ~]# hammer filter available-permissions --search 'access_dashboard'
----|------------------|----------------
-ID | NAME             | RESOURCE
----|------------------|----------------
-35 | access_dashboard | (Miscellaneous)
----|------------------|----------------
+---|-----------------|--------
+ID | NAME            | BUILTIN
+---|-----------------|--------
+34 | Database Admins | no
+---|-----------------|--------
 
 ```
 Asociar permiso **access_dashboard** a rol **Database Admins**
@@ -488,7 +490,7 @@ Listar el filtro asociado al rol 'Database Admins'
 ----|-----------------|--------|------------|-----------|-----------------|-----------------
 ID  | RESOURCE TYPE   | SEARCH | UNLIMITED? | OVERRIDE? | ROLE            | PERMISSIONS
 ----|-----------------|--------|------------|-----------|-----------------|-----------------
-321 | (Miscellaneous) | none   | yes        | no        | Database Admins | access_dashboard
+326 | (Miscellaneous) | none   | yes        | no        | Database Admins | access_dashboard
 ----|-----------------|--------|------------|-----------|-----------------|-----------------
 ```
 Crear el usuario 'dbasuser'
@@ -513,7 +515,7 @@ Validamos que el cambio conserve el permiso **access_dashboard** hacia el rol **
 ----|-----------------|--------|------------|-----------|------------------------|-----------------
 ID  | RESOURCE TYPE   | SEARCH | UNLIMITED? | OVERRIDE? | ROLE                   | PERMISSIONS
 ----|-----------------|--------|------------|-----------|------------------------|-----------------
-321 | (Miscellaneous) | none   | yes        | no        | Oracle Database Admins | access_dashboard
+326 | (Miscellaneous) | none   | yes        | no        | Oracle Database Admins | access_dashboard
 ----|-----------------|--------|------------|-----------|------------------------|-----------------
 ```
 Borrar el rol 'Oracle Database Admins'
