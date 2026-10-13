@@ -573,10 +573,6 @@ User role [Oracle Database Admins] deleted.
 <br>**-** Asociar el usuario dbasuser al grupo dbas_admins
 <br>**-** Marcar al grupo como administrador
 <br> 
-Solucion:
-```
-[root@satellite ~]# hammer user-group create --name dbas_admins --roles "Auditor" --users dbauser
-```
 
 <br>**Crear un rol con los siguiente datos:**
 <br>
