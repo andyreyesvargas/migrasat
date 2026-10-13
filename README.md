@@ -9,7 +9,7 @@
 
 <h3><a href="content/pages/sat.md">Sistema de Gestión Centralizada Satellite</a></h3>
 
-| Nro | Alumno | Red | IP Satellite | | IP Client |
+| Nro | Alumno | Red | IP Satellite | IP Client |
 | --- | --- | --- | --- | --- |
 | 01 | Juan Perez | 192.168.101.0/24 | 192.18.101.10 | 192.18.101.11 |
 | 02 | Juan Perez | 192.168.102.0/24 | 192.18.102.10 | 192.18.102.11 |
