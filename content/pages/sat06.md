@@ -535,7 +535,7 @@ User role [Oracle Database Admins] deleted.
 <br>**-** Autorizado por: INTERNAL
 <br>**-** Contraseña: redhat
 <br>**-** Verificar: redhat
-<br>**-** Organizacion y Ubicacion: Default
+<br>**-** Organizacion y Ubicacion: Migraciones/Lima
 <br>**-** Habilitar al usuario como Administrador de Satellite.
 
 <br>**Crear un grupo de usuarios con los siguiente datos:**
@@ -548,7 +548,7 @@ User role [Oracle Database Admins] deleted.
 <br>**Crear un rol con los siguiente datos:**
 <br>
 <br>**-** Nombre: **Application Admins**
-<br>**-** Ubicacion y Organizacion: Default Location, Default Organization
+<br>**-** Ubicacion y Organizacion: Migraciones/Lima
 <br>**-** Aplicar el filtro de access_dashboard
 <br>**-** Asociar el rol al usuario appsuser
 <br>
@@ -563,13 +563,9 @@ User role [Oracle Database Admins] deleted.
 <br> **-** Autorizado por: INTERNAL
 <br> **-** Contraseña: redhat
 <br> **-** Verificar: redhat
-<br> **-** Organizacion y Ubicacion: Default (usar --organization y --location)
+<br> **-** Organizacion y Ubicacion: Migraciones/Lima
 <br> **-** Habilitar al usuario como Administrador de Satellite.
 
-<br>Solucion:
-```
-[root@satellite ~]# hammer user create --login dbauser --firstname DBA --lastname Admin --mail dbauser@redhat.com --organization 'Default Organization' --location 'Default Location' --password redhat --auth-source 'Internal'
-```
 
 <br>**Crear un grupo de usuarios con los siguiente datos:**
 <br>
@@ -590,20 +586,11 @@ Solucion:
 <br>**-** Asociar el rol al usuario dbasuser 
 <br>
 
-<br>Solucion:
 <br>
 <br> Crear el Rol Database Admins
-```
-[root@satellite ~]# hammer role create --name 'Database Admins' --organization 'Default Organization' --location 'Default Location'
-```
 
 <br> Asignar los filtros view_lifecycle_environments, create_lifecycle_environments, destroy_lifecycle_environments, edit_lifecycle_environments al rol Database Admins
-```
-[root@satellite ~]# hammer filter create --permissions 'view_lifecycle_environments,create_lifecycle_environments,destroy_lifecycle_environments,edit_lifecycle_environments' --role 'Database Admins'
-```
+
 <br> Asociar el rol Database Admins al usuario dbauser
-```
-[root@satellite ~]# hammer user add-role --role 'Database Admins' --login 'dbauser'
-```
 
 <p><br><a href="sat.md">volver</a></p>
