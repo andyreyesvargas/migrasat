@@ -245,18 +245,21 @@ Successfully logged in as 'admin'.
 ```
 Crear el grupo de usuario dba_admins con los datos que se muestran en la siguiente salida.
 ```
+[root@satellite ~]# hammer user create --login andy.reyes --firstname Andy --lastname Reyes --mail andy.reyes@opennova.pe --default-organization 'Migraciones' --default-location 'Lima' --password redhat --auth-source 'Internal' --admin true
+User [andy.reyes] created.
+
 [root@satellite ~]# hammer user-group create --name dba_admins --admin true --users andy.reyes
 User group [dba_admins] created.
 ```
 Listar los grupos de usuario para validar
 ```
 [root@satellite ~]# hammer user-group list
----|-------------|------
-ID | NAME        | ADMIN
----|-------------|------
-1  | apps_admins | yes
-2  | dba_admins  | yes
----|-------------|------
+---|------------|------
+ID | NAME       | ADMIN
+---|------------|------
+1  | apps_admin | no
+2  | dba_admins | yes
+---|------------|------
 ```
 Listar la información del grupo de usuario dba_admins
 
@@ -273,8 +276,8 @@ External user groups:
 
 Roles:
 
-Created at:           2020/08/29 18:11:53
-Updated at:           2020/08/29 18:11:53
+Created at:           2026/10/13 16:40:04
+Updated at:           2026/10/13 16:40:04
 ```
 Listar la información del usuario y verificar que tiene el grupo asociado
 ```
@@ -284,14 +287,16 @@ Login:                 andy.reyes
 Name:                  Andy Reyes
 Email:                 andy.reyes@opennova.pe
 Admin:                 yes
-Last login:            2020/08/29 18:45:40
+Disabled:              no
+Last login:
 Authorized by:         Internal
+Email enabled:         no
 Effective admin:       yes
 Locale:                default
 Timezone:              default
 Description:
-Default organization:  Default Organization
-Default location:      Default Location
+Default organization:  Migraciones
+Default location:      Lima
 Roles:
 
 User groups:
@@ -299,8 +304,8 @@ User groups:
     Roles:
 Inherited User groups:
 
-Created at:            2020/08/29 17:05:52
-Updated at:            2020/08/29 18:45:25
+Created at:            2026/10/13 16:39:44
+Updated at:            2026/10/13 16:39:44
 ```
 
 Agregar un nuevo usuario al grupo dba_admins
@@ -320,8 +325,8 @@ External user groups:
 
 Roles:
 
-Created at:           2020/08/29 18:11:53
-Updated at:           2020/08/29 18:11:53
+Created at:           2026/10/13 16:40:04
+Updated at:           2026/10/13 16:40:04
 ```
 
 Modificar el nombre del grupo de usuarios a dbas_admin
@@ -332,7 +337,7 @@ User group [dbas_admins] updated.
 ---|-------------|------
 ID | NAME        | ADMIN
 ---|-------------|------
-1  | apps_admins | yes
+1  | apps_admin  | no
 2  | dbas_admins | yes
 ---|-------------|------
 [root@satellite ~]# hammer user-group info --name dbas_admins
@@ -348,8 +353,8 @@ External user groups:
 
 Roles:
 
-Created at:           2020/08/29 18:11:53
-Updated at:           2020/08/29 19:20:02
+Created at:           2026/10/13 16:40:04
+Updated at:           2026/10/13 16:43:22
 ```
 
 
@@ -361,11 +366,11 @@ User group [dbas_admins] deleted.
 Listar el grupo de usuario para validar
 ```
 [root@satellite ~]# hammer user-group list
----|-------------|------
-ID | NAME        | ADMIN
----|-------------|------
-1  | apps_admins | yes
----|-------------|------
+---|------------|------
+ID | NAME       | ADMIN
+---|------------|------
+1  | apps_admin | no
+---|------------|------
 ```
 # Crear Roles en Satellite por GUI. (Demostrativo)
 **Administrar > Roles**
