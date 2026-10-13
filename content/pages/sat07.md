@@ -26,7 +26,7 @@ El manifiesto es un archivo comprimido que contiene una lista de suscripciones, 
 
 # Generando un manifiesto de Red Hat Satellite. (Demostrativo)
 El instructor demostrara como crear un manifiesto de pruebas desde la pagina de Red Hat
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2734.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat56.png?raw=true"width="800" height="400"></p>
 
 # Asignando manifiestos a organizaciones. (Demostrativo)
 Antes de iniciar el proceso de asignar manifiestos a las organizaciones, el instructor compartirá en la ruta <strong>ftp://classroom.opennova.pe o ftp://192.168.100.203</strong> archivos de manifiestos para el curso
