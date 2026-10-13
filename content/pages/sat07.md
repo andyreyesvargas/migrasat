@@ -72,10 +72,10 @@ Por ultimo el Cliente para RHEL9
 
 # Sincronizando repositorios oficiales de Red Hat. (Demostrativo)
 Para sincronizar por primera vez los repositorios activados en secciones previas, ingresamos a la sección CONTENIDO > ESTATUS DE SINCRONIZACION
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2732.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat70.png?raw=true"width="800" height="400"></p>
 
 En esta sección vemos todos los repositorios activados pero que nunca se han sincronizado, podemos seleccionar repositorios específicos y proceder a sincronizarlos
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2733.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat71.png?raw=true"width="800" height="400"></p>
 
 Esta sincronización puede demorar minutos u horas dependiendo del tamaño del repositorio, por ejemplo los repositorios de SatTools e Insigths demorara solo unos segundos, pero los de sistema operativo podrían demorar mucho mas, el objetivo es tener los repositorios siempre sincronizados como se ve en la siguiente pantalla
 <p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2735.png?raw=true"width="800" height="400"></p>
