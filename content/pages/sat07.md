@@ -1,5 +1,5 @@
 <h1>Gestión de manifiestos y repositorios</h1>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat100.png?raw=true"></p>
+<p align="left"><img src="../images/sat.png?raw=true"></p>
 <p>
 <strong>Meta:</strong>
 <br>- Entendimiento de la gestión de manifiestos y repositorios en Red Hat Satellite.
