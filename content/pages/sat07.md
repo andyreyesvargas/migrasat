@@ -126,6 +126,18 @@ Repository enabled.
 [root@satellite ~]# hammer repository-set enable --organization "Operaciones" --product "Red Hat Enterprise Linux for x86_64" --name "Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)"
 Repository enabled.
 ```
+Para facilitar la sincronización, listamos los repositorios de la organización Operaciones
+```
+[root@satellite ~]# hammer repository list --organization Operaciones
+---|----------------------------------------------------------|-------------------------------------|--------------|-------------------------------------------|-------------------------------------------------------------------------
+ID | NAME                                                     | PRODUCT                             | CONTENT TYPE | CONTENT LABEL                             | URL                                  
+---|----------------------------------------------------------|-------------------------------------|--------------|-------------------------------------------|-------------------------------------------------------------------------
+5  | Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9 | Red Hat Enterprise Linux for x86_64 | yum          | rhel-9-for-x86_64-appstream-rpms          | https://cdn.redhat.com/content/dist/rhel9/9/x86_64/appstream/os
+4  | Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9    | Red Hat Enterprise Linux for x86_64 | yum          | rhel-9-for-x86_64-baseos-rpms             | https://cdn.redhat.com/content/dist/rhel9/9/x86_64/baseos/os
+6  | Red Hat Satellite Client 6 for RHEL 9 x86_64 RPMs        | Red Hat Enterprise Linux for x86_64 | yum          | satellite-client-6-for-rhel-9-x86_64-rpms | https://cdn.redhat.com/content/dist/layered/rhel9/x86_64/sat-client/6/os
+---|----------------------------------------------------------|-------------------------------------|--------------|-------------------------------------------|-------------------------------------------------------------------------
+```
+
 
 
 
