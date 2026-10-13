@@ -88,46 +88,47 @@ Successfully logged in as 'admin'.
 Crear usuario con los datos que se muestran en la siguiente salida.
 
 ```
-[root@satellite ~]# hammer user create --login andy.reyes --firstname Andy --lastname Reyes --mail andy.reyes@opennova.pe --default-organization 'Default Organization' --default-location 'Default Location' --password redhat --auth-source 'Internal' --admin true
+[root@satellite ~]# hammer user create --login andy.reyes --firstname Andy --lastname Reyes --mail andy.reyes@opennova.pe --default-organization 'Migraciones' --default-location 'Lima' --password redhat --auth-source 'Internal' --admin true
+User [andy.reyes] created.
 ```
 NOTA: Para identificar la información de organización,ubicación y fuente de autenticación utilizar las salidas indicadas.
 ```
 [root@satellite ~]# hammer organization list
----|----------------------|----------------------|-------------------------------------|---------------------
-ID | TITLE                | NAME                 | DESCRIPTION                         | LABEL
----|----------------------|----------------------|-------------------------------------|---------------------
-16 | Aplicaciones         | Aplicaciones         | Servidores del área de aplicaciones | apps
-1  | Default Organization | Default Organization |                                     | Default_Organization
-4  | Global Bank          | Global Bank          | Organización Principal              | principal
-3  | Opennova             | Opennova             |                                     | ON
----|----------------------|----------------------|-------------------------------------|---------------------
+---|--------------|--------------|-------------------------------------|------------
+ID | TITLE        | NAME         | DESCRIPTION                         | LABEL
+---|--------------|--------------|-------------------------------------|------------
+7  | Aplicaciones | Aplicaciones | Servidores del área de aplicaciones | apps
+3  | Global Bank  | Global Bank  | Organizacion Principal              | principal
+1  | Migraciones  | Migraciones  |                                     | Migraciones
+---|--------------|--------------|-------------------------------------|------------
 [root@satellite ~]# hammer location list
----|------------------|------------------|--------------------
-ID | TITLE            | NAME             | DESCRIPTION
----|------------------|------------------|--------------------
-2  | Default Location | Default Location |
-6  | Lima             | Lima             | Sede Sucursal
-8  | Panamá           | Panamá           | Sede Principal
-14 | San Isidro       | San Isidro       | Data Center Level 3
----|------------------|------------------|--------------------
+---|------------|------------|--------------------
+ID | TITLE      | NAME       | DESCRIPTION
+---|------------|------------|--------------------
+2  | Lima       | Lima       |
+5  | Panama     | Panama     | Sede Principal
+8  | San Isidro | San Isidro | Data Center Level 3
+---|------------|------------|--------------------
+
 [root@satellite ~]# hammer auth-source list
 ---|----------|--------------------
 ID | NAME     | TYPE OF AUTH SOURCE
 ---|----------|--------------------
 1  | Internal | AuthSourceInternal
+3  | External | AuthSourceExternal
 ---|----------|--------------------
 ```
 
 Listar los usuarios para validar
 ```
 [root@satellite ~]# hammer user list
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-ID | LOGIN         | NAME          | EMAIL                     | ADMIN | LAST LOGIN          | AUTHORIZED BY
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-4  | admin         | Admin User    | root@opennova.pe          | yes   | 2020/08/29 16:38:26 | Internal
-8  | andy.reyes    | Andy Reyes    | andy.reyes@opennova.pe    | yes   |                     | Internal
-5  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | 2020/08/29 02:01:47 | Internal
----|---------------|---------------|---------------------------|-------|---------------------|--------------
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+ID | LOGIN         | NAME          | EMAIL                     | ADMIN | DISABLED | LAST LOGIN          | AUTHORIZED BY
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+4  | admin         | Admin User    | root@migraciones09.gob.pe | yes   | no       | 2026/10/13 16:02:10 | Internal
+7  | andy.reyes    | Andy Reyes    | andy.reyes@opennova.pe    | yes   | no       |                     | Internal
+6  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | no       | 2026/10/07 21:42:03 | Internal
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
 ```
 
 Autenticarse por linea de comandos con el usuario andy.reyes y realizar consultas.
@@ -135,31 +136,29 @@ Autenticarse por linea de comandos con el usuario andy.reyes y realizar consulta
 [root@satellite ~]# hammer auth login basic --username andy.reyes --password redhat
 Successfully logged in as 'andy.reyes'.
 [root@satellite ~]# hammer organization list
----|----------------------|----------------------|-------------------------------------|---------------------
-ID | TITLE                | NAME                 | DESCRIPTION                         | LABEL
----|----------------------|----------------------|-------------------------------------|---------------------
-16 | Aplicaciones         | Aplicaciones         | Servidores del área de aplicaciones | apps
-1  | Default Organization | Default Organization |                                     | Default_Organization
-4  | Global Bank          | Global Bank          | Organizacion Principal              | principal
-3  | Opennova             | Opennova             |                                     | ON
----|----------------------|----------------------|-------------------------------------|---------------------
+---|--------------|--------------|-------------------------------------|------------
+ID | TITLE        | NAME         | DESCRIPTION                         | LABEL
+---|--------------|--------------|-------------------------------------|------------
+7  | Aplicaciones | Aplicaciones | Servidores del área de aplicaciones | apps
+3  | Global Bank  | Global Bank  | Organizacion Principal              | principal
+1  | Migraciones  | Migraciones  |                                     | Migraciones
+---|--------------|--------------|-------------------------------------|------------
 [root@satellite ~]# hammer location list
----|------------------|------------------|--------------------
-ID | TITLE            | NAME             | DESCRIPTION
----|------------------|------------------|--------------------
-2  | Default Location | Default Location |
-6  | Lima             | Lima             | Sede Sucursal
-8  | Panamá           | Panamá           | Sede Principal
-14 | San Isidro       | San Isidro       | Data Center Level 3
----|------------------|------------------|--------------------
+---|------------|------------|--------------------
+ID | TITLE      | NAME       | DESCRIPTION
+---|------------|------------|--------------------
+2  | Lima       | Lima       |
+5  | Panama     | Panama     | Sede Principal
+8  | San Isidro | San Isidro | Data Center Level 3
+---|------------|------------|--------------------
 [root@satellite ~]# hammer user list
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-ID | LOGIN         | NAME          | EMAIL                     | ADMIN | LAST LOGIN          | AUTHORIZED BY
----|---------------|---------------|---------------------------|-------|---------------------|--------------
-4  | admin         | Admin User    | root@opennova.pe          | yes   | 2020/08/29 16:38:26 | Internal
-8  | andy.reyes    | Andy Reyes    | andy.reyes@opennova.pe    | yes   |                     | Internal
-5  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | 2020/08/29 02:01:47 | Internal
----|---------------|---------------|---------------------------|-------|---------------------|--------------
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+ID | LOGIN         | NAME          | EMAIL                     | ADMIN | DISABLED | LAST LOGIN          | AUTHORIZED BY
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
+4  | admin         | Admin User    | root@migraciones09.gob.pe | yes   | no       | 2026/10/13 16:02:10 | Internal
+7  | andy.reyes    | Andy Reyes    | andy.reyes@opennova.pe    | yes   | no       | 2026/10/13 16:06:29 | Internal
+6  | jaime.zamudio | Jaime Zamudio | jaime.zamudio@opennova.pe | yes   | no       | 2026/10/07 21:42:03 | Internal
+---|---------------|---------------|---------------------------|-------|----------|---------------------|--------------
 ```
 
 Validar el acceso por GUI
