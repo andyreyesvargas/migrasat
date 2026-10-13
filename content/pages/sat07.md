@@ -137,15 +137,17 @@ ID | NAME                                                     | PRODUCT         
 6  | Red Hat Satellite Client 6 for RHEL 9 x86_64 RPMs        | Red Hat Enterprise Linux for x86_64 | yum          | satellite-client-6-for-rhel-9-x86_64-rpms | https://cdn.redhat.com/content/dist/layered/rhel9/x86_64/sat-client/6/os
 ---|----------------------------------------------------------|-------------------------------------|--------------|-------------------------------------------|-------------------------------------------------------------------------
 ```
-
-
-
-
-
-
-
-
-
+Con los IDs de los 3 repositorios, ejecutamos la sincronización
+```
+[root@satellite ~]# hammer repository synchronize --id 4 --async --organization Operaciones
+Repository is being synchronized in task 30c5c48c-7e9d-4f28-88c3-128b4f1b2b4b.
+[root@satellite ~]# hammer repository synchronize --id 5 --async --organization Operaciones
+Repository is being synchronized in task c58b1d34-9bea-48d0-bde7-94741408b55f.
+[root@satellite ~]# hammer repository synchronize --id 6 --async --organization Operaciones
+Repository is being synchronized in task 6531aa5f-7c4b-4c30-afba-ed39621b61e5.
+```
+Para verificar la sincronización de la organización operaciones, podemos ir a la GUI
+<p align="left"><img src="../images/sat73.png?raw=true"width="800" height="400"></p>
 
 
 
