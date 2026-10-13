@@ -1,4 +1,4 @@
-<h1>Entendimiento y gestión de usuarios</h1>
+<h1>Gestión de usuarios, grupos y roles</h1>
 <p align="left"><img src="../images/sat.png?raw=true"></p>
 <p>
 <strong>Meta:</strong>
