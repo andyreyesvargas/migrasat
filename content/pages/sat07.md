@@ -55,31 +55,20 @@ Se activaran las suscripciones disponibles en el manifiesto
 
 # Activando repositorios oficiales de Red Hat. (Demostrativo)
 Para activar repositorios disponibles en el manifiesto, vamos a la sección CONTENIDO > REPOSITORIOS DE REDHAT
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2723.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat65.png?raw=true"width="800" height="400"></p>
 
 Es recomendable activar la opción de REPOSITORIOS RECOMENDADOS para mostrar los repositorios mas comunes de las suscripciones
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2724.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat66.png?raw=true"width="800" height="400"></p>
 
-Ahora vamos a activar los repositorios mas importantes para los sistemas RHEL 8, empesando por el BaseOs
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2725.png?raw=true"width="800" height="400"></p>
+Ahora vamos a activar los repositorios mas importantes para los sistemas RHEL 9, empesando por el BaseOs
+<p align="left"><img src="../images/sat67.png?raw=true"width="800" height="400"></p>
 
 Luego Activamos el AppStream
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2726.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat68.png?raw=true"width="800" height="400"></p>
 
-Por ultimo el SatTools para RHEL8
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2727.png?raw=true"width="800" height="400"></p>
+Por ultimo el Cliente para RHEL9
+<p align="left"><img src="../images/sat69.png?raw=true"width="800" height="400"></p>
 
-De igual manera podemos activar los repositorios de RHEL7 empesando por el sistema operativo
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2728.png?raw=true"width="800" height="400"></p>
-
-También activamos el SatTools para RHEL7
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2729.png?raw=true"width="800" height="400"></p>
-
-En el caso de RHEL7, es necesario activar el repositorio de Insights, este repositorio no esta disponible en los recomendados, por ello lo desactivamos y aplicamos un filtro en la búsqueda para encontrarlo
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2730.png?raw=true"width="800" height="400"></p>
-
-Activamos el repositorio de Insighys para RHEL7
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2731.png?raw=true"width="800" height="400"></p>
 
 # Sincronizando repositorios oficiales de Red Hat. (Demostrativo)
 Para sincronizar por primera vez los repositorios activados en secciones previas, ingresamos a la sección CONTENIDO > ESTATUS DE SINCRONIZACION
