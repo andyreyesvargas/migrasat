@@ -375,35 +375,35 @@ ID | NAME       | ADMIN
 # Crear Roles en Satellite por GUI. (Demostrativo)
 **Administrar > Roles**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat609.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat/sat48.png?raw=true"width="800" height="400"></p>
 
 En la pagina de Roles darle click al botón **Crear rol**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat610.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat49.png?raw=true"width="800" height="400"></p>
 
 Ingresar los datos como se muestra en la imagen y darle click al botón **Enviar**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat611.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat/sat50.png?raw=true"width="800" height="400"></p>
 
 Verificar que el rol se haya creado de manera satisfactoria y darle click al botón **Filtros**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat612.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat/sat51.png?raw=true"width="800" height="400"></p>
 
 En la pagina de filtros darle click al botón **Crear filtro**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat613.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat/sat52.png?raw=true"width="800" height="400"></p>
 
 Ingresar los datos como se muestra en la imagen y darle click al botón **Enviar**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat614.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat53.png?raw=true"width="800" height="400"></p>
 
 Verificar que el filtro se haya creado de manera satisfactoria
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat615.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat54.png?raw=true"width="800" height="400"></p>
 
 Validar en el perfil de un usuario si en la opción de **roles** ahora se pueda buscar el rol Application Admins como muestra la imagen
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat616.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat55.png?raw=true"width="800" height="400"></p>
 
 # Crear Roles en Satellite por CLI hammer. (Demostrativo)
 Autenticarse utilizando la herramienta hammer
