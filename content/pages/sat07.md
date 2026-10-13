@@ -78,7 +78,7 @@ En esta sección vemos todos los repositorios activados pero que nunca se han si
 <p align="left"><img src="../images/sat71.png?raw=true"width="800" height="400"></p>
 
 Esta sincronización puede demorar minutos u horas dependiendo del tamaño del repositorio, por ejemplo los repositorios de SatTools e Insigths demorara solo unos segundos, pero los de sistema operativo podrían demorar mucho mas, el objetivo es tener los repositorios siempre sincronizados como se ve en la siguiente pantalla
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2735.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat72.png?raw=true"width="800" height="400"></p>
 
 Como recomendación final, cuando los recursos de computo son limitados, se recomienda sincronizar un repositorio a la vez
 
@@ -90,12 +90,47 @@ Autenticarse utilizando la herramienta hammer
 [Foreman] Password for admin:
 Successfully logged in as 'admin'.
 ```
-Crear usuario con los datos que se muestran en la siguiente salida.
+Crear la organizaciones de operaciones
+```
+[root@satellite ~]# hammer organization create  --name Operaciones --label operaciones --description 'Servidores de operaciones' --location Lima
+Organization created.
+```
+Obtener el manifiesto desde el servidor ftp
+```
+[root@satellite ~]# wget ftp://ftp.migraciones.gob.pe/manifiestos/manifest_MIGRA_operaciones_20261013T184234Z.zip
 
+manifest_MIGRA_operacion 100%[=================================>]   1.28M  --.-KB/s    in 0.01s
+
+2026-10-13 14:17:53 (99.2 MB/s) - ‘manifest_MIGRA_operaciones_20261013T184234Z.zip’ saved [1339787]
 ```
-[root@satellite ~]# hammer user create --login andy.reyes --firstname Andy --lastname Reyes --mail andy.reyes@opennova.pe --default-organization 'Migraciones' --default-location 'Lima' --password redhat --auth-source 'Internal' --admin true
-User [andy.reyes] created.
+Importar el manifiesto descargado a la organizaciones Operaciones
 ```
+[root@satellite ~]# hammer subscription upload --file manifest_MIGRA_operaciones_20261013T184234Z.zip --organization "Operaciones"
+warning: Overriding "Content-Type" header "multipart/form-data" with "multipart/form-data; boundary=----RubyFormBoundaryz1TO09tyRfrbCNAh" due to payload
+[..........................................................................................] [100%]
+```
+Verificar las suscripciones de la organización operaciones
+```
+---|----------------------------------|------------------------------------------|----------|----------|---------|---------|---------------------|---------------------|----------|----------|-------------------
+ID | UUID                             | NAME                                     | TYPE     | CONTRACT | ACCOUNT | SUPPORT | START DATE          | END DATE            | QUANTITY | CONSUMED | PRODUCT HOST COUNT
+---|----------------------------------|------------------------------------------|----------|----------|---------|---------|---------------------|---------------------|----------|----------|-------------------
+2  | 4028ed8aa13688d401a136b4eca65719 | Red Hat Partner Subscription (500 Nodes) | Physical |          | 5257369 | None    | 2026/05/30 04:00:00 | 2027/05/30 03:59:59 | 5        | 0        | 0      
+---|----------------------------------|------------------------------------------|----------|----------|---------|---------|---------------------|---------------------|----------|----------|-------------------
+```
+Importar el manifiesto descargado a la organizaciones Operaciones
+```
+[root@satellite ~]# ham
+```
+
+
+
+
+
+
+
+
+
+
 
 # Laboratorio
 <br>- Con lo aprendido en esta lección, importe los manifiestos disponibles para las organizaciones Aplicaciones y Cajeros
