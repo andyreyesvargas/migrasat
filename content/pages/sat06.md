@@ -215,25 +215,25 @@ ID | LOGIN         | NAME          | EMAIL                     | ADMIN | DISABLE
 # Crear Grupos de usuarios en Satellite por GUI. (Demostrativo)
 **Administrar > Grupos de usuario**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat604.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat42.png?raw=true"width="800" height="400"></p>
 
 En la pagina de Grupos de usuario darle click al botón **Crear grupos de usuario**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat605.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat43.png?raw=true"width="800" height="400"></p>
 
 Ingresar los datos como se muestra en la imagen y darle click al boton **Enviar**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat606.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat44.png?raw=true"width="800" height="400"></p>
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat607.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat45.png?raw=true"width="800" height="400"></p>
 
 Verificar y editar el grupo de usuarios
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat608_00.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat46.png?raw=true"width="800" height="400"></p>
 
 En la opción de **roles** seleccionar la **casilla de Administrar** y darle al botón **Enviar**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat608_01.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat47.png?raw=true"width="800" height="400"></p>
 
 # Crear Grupos de usuario en Satellite por CLI hammer. (Demostrativo)
 Autenticarse utilizando la herramienta hammer
