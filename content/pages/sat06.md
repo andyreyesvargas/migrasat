@@ -577,7 +577,7 @@ User role [Oracle Database Admins] deleted.
 <br>**Crear un rol con los siguiente datos:**
 <br>
 <br>**-** Nombre: **Database Admins**
-<br>**-** Ubicacion y Organizacion: Default Location, Default Organization
+<br>**-** Ubicacion y Organizacion: Migraciones/Lima
 <br>**-** Aplicar el filtro de view_lifecycle_environments, create_lifecycle_environments, destroy_lifecycle_environments, edit_lifecycle_environments.
 <br>**-** Asociar el rol al usuario dbasuser 
 <br>
