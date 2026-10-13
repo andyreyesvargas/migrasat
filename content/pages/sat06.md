@@ -163,9 +163,9 @@ ID | LOGIN         | NAME          | EMAIL                     | ADMIN | DISABLE
 
 Validar el acceso por GUI
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat618.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat40.png?raw=true"width="800" height="400"></p>
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat617.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat41.png?raw=true"width="800" height="400"></p>
 
 Actualizar la contraseña del usuario andy.reyes
 ```
