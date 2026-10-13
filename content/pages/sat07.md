@@ -119,7 +119,12 @@ ID | UUID                             | NAME                                    
 ```
 Importar el manifiesto descargado a la organizaciones Operaciones
 ```
-[root@satellite ~]# ham
+[root@satellite ~]# hammer repository-set enable --organization "Operaciones" --product "Red Hat Enterprise Linux for x86_64" --name "Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)" --releasever "9"
+Repository enabled.
+[root@satellite ~]# hammer repository-set enable --organization "Operaciones" --product "Red Hat Enterprise Linux for x86_64" --name "Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)" --releasever "9"
+Repository enabled.
+[root@satellite ~]# hammer repository-set enable --organization "Operaciones" --product "Red Hat Enterprise Linux for x86_64" --name "Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)"
+Repository enabled.
 ```
 
 
