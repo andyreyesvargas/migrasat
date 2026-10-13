@@ -375,7 +375,7 @@ ID | NAME       | ADMIN
 # Crear Roles en Satellite por GUI. (Demostrativo)
 **Administrar > Roles**
 
-<p align="left"><img src="../images/sat/sat48.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat48.png?raw=true"width="800" height="400"></p>
 
 En la pagina de Roles darle click al botón **Crear rol**
 
@@ -383,15 +383,15 @@ En la pagina de Roles darle click al botón **Crear rol**
 
 Ingresar los datos como se muestra en la imagen y darle click al botón **Enviar**
 
-<p align="left"><img src="../images/sat/sat50.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat50.png?raw=true"width="800" height="400"></p>
 
 Verificar que el rol se haya creado de manera satisfactoria y darle click al botón **Filtros**
 
-<p align="left"><img src="../images/sat/sat51.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat51.png?raw=true"width="800" height="400"></p>
 
 En la pagina de filtros darle click al botón **Crear filtro**
 
-<p align="left"><img src="../images/sat/sat52.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat52.png?raw=true"width="800" height="400"></p>
 
 Ingresar los datos como se muestra en la imagen y darle click al botón **Enviar**
 
