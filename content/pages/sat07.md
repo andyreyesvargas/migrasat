@@ -152,15 +152,19 @@ Para verificar la sincronización de la organización operaciones, podemos ir a 
 
 
 # Laboratorio
-<br>- Con lo aprendido en esta lección, importe los manifiestos disponibles para las organizaciones Aplicaciones y Cajeros
-<br>- Active los repositorios básicos de RHEL8 para la organización Aplicaciones
-<br>- Sincronice los repositorios de la organización Aplicaciones
-<br>- Active los repositorios básicos de RHEL7 para la organización Cajeros
-<br>- Sincronice los repositorios de la organización Cajeros
+<br>- Con lo aprendido en esta lección realice las siguientes operaciones:
 
-**NOTA:**
-Puede descargar los manifiestos de aquí:  
-**wget** ftp://classroom.opennova.pe/manifiestos/manifest_aplicaciones_20230117T202214Z.zip  
-**wget** ftp://classroom.opennova.pe/manifiestos/manifest_cajeros_20230117T202226Z.zip
+<br><strong>Aplicando el GUI</strong>
+<br>- Importe los manifiestos disponibles para las organización default de Migraciones
+<br>- Active los repositorios básicos de RHEL9 para la organización Migraciones
+<br>- Sincronice los repositorios de la organización Migraciones
+<br>
+<br>
+<br><strong>Aplicando el CLI</strong>
+<br>- Importe los manifiestos disponibles para las organización de Operaciones
+<br>- Active los repositorios básicos de RHEL9 para la organización Operaciones
+<br>- Sincronice los repositorios de la organización Operaciones
+<br>
+<br>
 
-<p><br><a href="sat">volver</a></p>
+<p><br><a href="sat.md">volver</a></p>
