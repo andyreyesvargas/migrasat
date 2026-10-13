@@ -30,28 +30,28 @@ El instructor demostrara como crear un manifiesto de pruebas desde la pagina de 
 
 # Asignando manifiestos a organizaciones. (Demostrativo)
 Antes de iniciar el proceso de asignar manifiestos a las organizaciones, el instructor compartirá en la ruta <strong>ftp://classroom.opennova.pe o ftp://192.168.100.203</strong> archivos de manifiestos para el curso
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2716a.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat57.png?raw=true"width="800" height="400"></p>
 
 Se compartirá algunos manifiestos de prueba en la ruta manifiestos
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2716b.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat58.png?raw=true"width="800" height="400"></p>
 
 Para iniciar el proceso de importación, primero debemos estar seguros de estar en la organización objetivo
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2717.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat59.png?raw=true"width="800" height="400"></p>
 
 Ingresamos a la sección de CONTENIDO > SUSCRIPCIONES
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2718.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat60.png?raw=true"width="800" height="400"></p>
 
 Procedemos a importar un manifiesto
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2719.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat61.png?raw=true"width="800" height="400"></p>
 
 Seleccionamos la opción de importar archivo y seleccionamos el archivo de manifiesto
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2720.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat62.png?raw=true"width="800" height="400"></p>
 
 El sistema proceder a importar el manifiesto
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2721.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat63.png?raw=true"width="800" height="400"></p>
 
 Se activaran las suscripciones disponibles en el manifiesto
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2722.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat64.png?raw=true"width="800" height="400"></p>
 
 # Activando repositorios oficiales de Red Hat. (Demostrativo)
 Para activar repositorios disponibles en el manifiesto, vamos a la sección CONTENIDO > REPOSITORIOS DE REDHAT
