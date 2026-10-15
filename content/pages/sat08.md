@@ -118,11 +118,115 @@ Verificar que los paquetes se hayan cargado de manera satisfactoria, en la opcio
 <p align="left"><img src="../images/sat95.png?raw=true"width="800" height="400"></p>
 
 
-# Modificación de llave de activación para producto personalizado. (Demostrativo)
+# Verificación del contenido customizado. (Demostrativo)
 
-Para poder probar el repositorio personalizado debemos hacer un ajuste a la llave de activación "rhel8" como se muestra en las imagenes. Esta llave de activacion ya cuenta con los repositorios Base y AppStream de rhel8, hay que agregarle el repositorio personalizado. Mas adelante en el entrenamiento aprendera a crear llaves de activacion.
+Para poder probar el repositorio personalizado podemos registrar temporalmente un sistema cliente y realizar la instalación de productos
 
-**Content >  Activation Keys**
+**Registro de cliente**
+Utilizando su propio cliente, registrelo en su propia plataforma Satelite(El siguiente ejemplo es solo para el alumno09)
+```
+[root@client ~]# yum install -y http://satellite.migraciones09.gob.pe/pub/katello-ca-consumer-latest.noarch.rpm
+Updating Subscription Management repositories.
+
+Dependencies resolved.
+===================================================================================================
+ Package                                               Arch      Version     Repository       Size
+===================================================================================================
+Installing:
+ katello-ca-consumer-satellite.migraciones09.gob.pe    noarch    1.0-1       @commandline     10 k
+
+Transaction Summary
+===================================================================================================
+
+Installed:
+  katello-ca-consumer-satellite.migraciones09.gob.pe-1.0-1.noarch
+
+Complete!
+
+[root@client ~]# subscription-manager register
+Registering to: satellite.migraciones09.gob.pe:443/rhsm
+Username: admin
+Password:
+Hint: User "admin" is member of following organizations: apps, principal, Migraciones, operaciones
+Organization: Migraciones
+The system has been registered with ID: f36cc047-f211-4e7d-8df8-c3062edc95f7
+The registered system name is: client.migraciones09.gob.pe
+```
+
+Verifique los repositorios disponibles y habilite el repositorio customizado de jfrog
+```
+[root@client ~]# subscription-manager repos
++----------------------------------------------------------+
+    Available Repositories in /etc/yum.repos.d/redhat.repo
++----------------------------------------------------------+
+Repo ID:   rhel-9-for-x86_64-appstream-rpms
+Repo Name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
+Repo URL:  https://satellite.migraciones09.gob.pe/pulp/content/Migraciones/Library/content/dist/rhe
+           l9/$releasever/x86_64/appstream/os
+Enabled:   1
+
+Repo ID:   rhel-9-for-x86_64-baseos-rpms
+Repo Name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
+Repo URL:  https://satellite.migraciones09.gob.pe/pulp/content/Migraciones/Library/content/dist/rhe
+           l9/$releasever/x86_64/baseos/os
+Enabled:   1
+
+Repo ID:   Migraciones_Custom_jfrog
+Repo Name: jfrog
+Repo URL:  https://satellite.migraciones09.gob.pe/pulp/content/Migraciones/Library/custom/Custom/jf
+           rog
+Enabled:   0
+
+Repo ID:   satellite-client-6-for-rhel-9-x86_64-rpms
+Repo Name: Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)
+Repo URL:  https://satellite.migraciones09.gob.pe/pulp/content/Migraciones/Library/content/dist/lay
+           ered/rhel9/x86_64/sat-client/6/os
+Enabled:   0
+
+[root@client ~]# subscription-manager repos --enable Migraciones_Custom_jfrog
+Repository 'Migraciones_Custom_jfrog' is enabled for this system.
+```
+
+Por ultimo instalamos y verificamos el RPM jgrog-cli
+```
+[root@client ~]# yum install -y jfrog-cli
+
+Dependencies resolved.
+===================================================================================================
+ Package            Architecture    Version                Repository                         Size
+===================================================================================================
+Installing:
+ jfrog-cli          x86_64          2.124.0-1.el9          Migraciones_Custom_jfrog           23 M
+
+Transaction Summary
+===================================================================================================
+Install  1 Package
+
+Importing GPG key 0x3228467C:
+ Userid     : "Fedora (epel9) <epel@fedoraproject.org>"
+ Fingerprint: FF8A D134 4597 106E CE81 3B91 8A38 72BF 3228 467C
+ From       : https://satellite.migraciones09.gob.pe/katello/api/v2/repositories/8/gpg_key_content
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                           1/1
+  Installing       : jfrog-cli-2.124.0-1.el9.x86_64                                            1/1
+  Running scriptlet: jfrog-cli-2.124.0-1.el9.x86_64                                            1/1
+  Verifying        : jfrog-cli-2.124.0-1.el9.x86_64                                            1/1
+Installed products updated.
+
+Installed:
+  jfrog-cli-2.124.0-1.el9.x86_64
+
+Complete!
+[root@client ~]# rpm -q jfrog-cli
+jfrog-cli-2.124.0-1.el9.x86_64
+```
+
+
 <p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat824.png?raw=true"width="800" height="400"></p>
 
 En la pagina de Llaves de activación darle click a la llave de nombre **rhel8**
