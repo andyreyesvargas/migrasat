@@ -122,7 +122,6 @@ Verificar que los paquetes se hayan cargado de manera satisfactoria, en la opcio
 
 Para poder probar el repositorio personalizado podemos registrar temporalmente un sistema cliente y realizar la instalación de productos
 
-**Registro de cliente**
 Utilizando su propio cliente, registrelo en su propia plataforma Satelite(El siguiente ejemplo es solo para el alumno09)
 ```
 [root@client ~]# yum install -y http://satellite.migraciones09.gob.pe/pub/katello-ca-consumer-latest.noarch.rpm
