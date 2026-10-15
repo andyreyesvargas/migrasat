@@ -87,7 +87,7 @@ Verificar que el contenido de la credencial se haya creado de manera satisfactor
 
 # Creación de contenido de productos personalizado. (Demostrativo)
 
-Para esta seccion utilizar el **ftp://classroom.opennova.pe/custom_resources/** o **ftp://192.168.100.203/custom_resources/** donde encontraremos los recursos necesarios para la unidad.
+Para esta seccion utilizar el rpm **ftp://classroom.opennova.pe/custom_resources/** o **ftp://192.168.100.203/custom_resources/** donde encontraremos los recursos necesarios para la unidad.
 
 **Content > Product** 
 En la pagina de Productos dar click al boton **Crear Product**
