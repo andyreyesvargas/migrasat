@@ -31,48 +31,41 @@ La siguiente demostración tiene como finalidad aprender los contenidos de softw
 
 Visualizar la pagina de **Suscripciones** y las opciones para cagar manifiesto.
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat800.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat74.png?raw=true"width="800" height="400"></p>
 
-En la pagina de Suscripciones darle click al boton **Manage manifest**
+En la pagina de Suscripciones examinar las suscripciones disponibles
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat801.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat75.png?raw=true"width="800" height="400"></p>
 
-Visualizar la opción de Subscription Manifest
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat802.png?raw=true"width="800" height="400"></p>
 
 # Visualizar contenido de repositorios Red Hat. (Demostrativo)
 
 **Content > Red Hat Repositories**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat803.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat76.png?raw=true"width="800" height="400"></p>
 
 En la pagina de **Red Hat Repositories** Visualizar las opciones de Repositorios Disponibles y Repositorios Habilitados
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat804.png?raw=true"width="800" height="400"></p>
-
-En repositorios disponibles inspeccionar el repositorio de Red Hat Enterprise Linux 7 como muestra la siguiente imagen
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat805.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat77.png?raw=true"width="800" height="400"></p>
 
 
 # Visualizar contenido de productos. (Demostrativo)
 
 **Content > Product**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat806.png?raw=true"width="800" height="400"></p>
-
-En la pagina de **Productos** Visualizar los productos disponibles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat807.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat78.png?raw=true"width="800" height="400"></p>
 
 Hacer click en el producto Red Hat Enteprise Linux for x86_64 y visualizar el tab Repositorios
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat808.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat79.png?raw=true"width="800" height="400"></p>
 
 Hacer click en el producto Red Hat Enteprise Linux Server y visualizar el tab Repositorios
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat809.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat80.png?raw=true"width="800" height="400"></p>
+
+Examinar el contenido del repositorio
+
+<p align="left"><img src="../images/sat81.png?raw=true"width="800" height="400"></p>
 
 # Creación de contenido de credenciales. (Demostrativo)
 
