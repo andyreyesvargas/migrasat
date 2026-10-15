@@ -1,5 +1,5 @@
-<h1>Entendimiento y gestión de paquetes de software</h1>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat100.png?raw=true"></p>
+<h1>Gestion de Contenido</h1>
+<p align="left"><img src="../images/sat.png?raw=true"></p>
 <p>
 <strong>Meta:</strong>
 <br>- Entendimiento de la gestión de paquetes de software en Red Hat Satellite.
