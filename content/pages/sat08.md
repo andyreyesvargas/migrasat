@@ -289,4 +289,4 @@ Visualizar el estado de la sincronizacion de los productos
 <br>**5. Crear un plan de sincronizacion llamado "CustomX Sync Plan" como se indica en la demostración, utilizar el procedimiento como referencia**
 <br> Asociar el producto "CustomX Java" y deberá ejecutarse todos los viernes a las 11:45 pm. ( Puede usar este valor en el cron personalizado 45 11 * * 5)
 
-<p><br><a href="sat">volver</a></p>
+<p><br><a href="sat.md">volver</a></p>
