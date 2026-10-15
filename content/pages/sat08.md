@@ -225,6 +225,17 @@ Complete!
 jfrog-cli-2.124.0-1.el9.x86_64
 ```
 
+Desuscribimos el cliente con los comandos
+```
+[root@client ~]# subscription-manager unregister
+This system is currently not registered.
+[root@client ~]# subscription-manager remove --all
+0 subscriptions removed from this system.
+[root@client ~]# subscription-manager clean
+All local data removed
+```
+
+
 # Crear plan de sincronizacion programado. (Demostrativo)
 **Content > Sync Plans** 
 <p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat827.png?raw=true"width="800" height="400"></p>
