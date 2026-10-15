@@ -1,4 +1,4 @@
-<h1>Gestion de Contenido</h1>
+<h1>Gestión de Contenido</h1>
 <p align="left"><img src="../images/sat.png?raw=true"></p>
 <p>
 <strong>Meta:</strong>
