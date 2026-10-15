@@ -71,19 +71,19 @@ Examinar el contenido del repositorio
 
 **Content > Content Credentials**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat810.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat82.png?raw=true"width="800" height="400"></p>
 
 En la pagina de **Content Credentials** hacer click en el botón **Create Content Credential**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat811.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat83.png?raw=true"width="800" height="400"></p>
 
-Ingresar la información como se muestra en pantalla. En el botón examinar deberán ubicar el archivo **CUSTOM-GPG-KEY.txt**
+Ingresar la información como se muestra en pantalla. En el botón examinar deberán ubicar el archivo **RPM-GPG-KEY-CUSTOM-9.txt** descargado desde el ftp://ftp.migraciones.gob.pe
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat812.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat84.png?raw=true"width="800" height="400"></p>
 
 Verificar que el contenido de la credencial se haya creado de manera satisfactoria.
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat813.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat85.png?raw=true"width="800" height="400"></p>
 
 # Creación de contenido de productos personalizado. (Demostrativo)
 
