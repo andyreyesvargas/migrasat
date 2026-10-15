@@ -87,35 +87,36 @@ Verificar que el contenido de la credencial se haya creado de manera satisfactor
 
 # Creación de contenido de productos personalizado. (Demostrativo)
 
-Para esta seccion utilizar el rpm **ftp://classroom.opennova.pe/custom_resources/** o **ftp://192.168.100.203/custom_resources/** donde encontraremos los recursos necesarios para la unidad.
+Para esta seccion utilizar el rpm jfrog-cli-2.124.0-1.el9.x86_64.rpm disponible en el ftp://ftp.migraciones.gob.pe y la llavee GPG importada en secciones anteriores.
 
-**Content > Product** 
+Ingersar a la sección de productos
+<p align="left"><img src="../images/sat86.png?raw=true"width="800" height="400"></p>
+
 En la pagina de Productos dar click al boton **Crear Product**
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat814.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat87.png?raw=true"width="800" height="400"></p>
 
 Ingresar la información como se muestra en la siguiente imagen
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat815.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat88.png?raw=true"width="800" height="400"></p>
 
 Luego ir al tab Repositorios y darle click al botón **Nuevo repositorio**
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat816.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat89.png?raw=true"width="800" height="400"></p>
 
 En la pagina siguiente, en Nuevo repositorio ingresar la información de: Nombre, Etiqueta, Descripción, Tipo.
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat817.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat90.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat91.png?raw=true"width="800" height="400"></p>
 
-Darle click al boton **Guardar**
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat818.png?raw=true"width="800" height="400"></p>
+Verificar que el repositorio Java jfrog se haya creado de manera satisfactoria e ingresamos
+<p align="left"><img src="../images/sat92.png?raw=true"width="800" height="400"></p>
 
-Verificar que el repositorio Java IBM se haya creado de manera satisfactoria
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat819.png?raw=true"width="800" height="400"></p>
+Hacer click al repositorio a la opcion de cargar paquete, ahi se debera cargar los paquetes: jfrog-cli-2.124.0-1.el9.x86_64.rpm
+<p align="left"><img src="../images/sat93.png?raw=true"width="800" height="400"></p>
 
-Hacer click al repositorio Java IBM e ir a la opcion de cargar paquete, ahi se debera cargar los paquetes: java-1.8.0-ibm-1.8.0.6.15-1.el8_2.x86_64.rpm, java-1.8.0-ibm-headless-1.8.0.6.15-1.el8_2.x86_64.rpm, una vez seleccionados dar al boton **Cargar**
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat821.png?raw=true"width="800" height="400"></p>
+Una vez seleccionados dar al boton **Cargar**
+<p align="left"><img src="../images/sat94.png?raw=true"width="800" height="400"></p>
 
 Verificar que los paquetes se hayan cargado de manera satisfactoria, en la opcion de Recuento de contenido darle click al numero 2 en la opcion de Paquetes
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat822.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat95.png?raw=true"width="800" height="400"></p>
 
-Verificar que se encuentren los paquetes cargados
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat823.png?raw=true"width="800" height="400"></p>
 
 # Modificación de llave de activación para producto personalizado. (Demostrativo)
 
