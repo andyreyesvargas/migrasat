@@ -65,7 +65,7 @@ Crear uno nuevo
 <p align="left"><img src="../images/sat115.png?raw=true"width="800" height="400"></p>
 
 Ingresar los datos para una vista asociada al entorno DEV para sistemas RHEL9
-<p align="left"><img src="../images/sat116.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat116.png?raw=true"></p>
 
 
 
