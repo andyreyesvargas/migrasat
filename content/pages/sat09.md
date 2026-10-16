@@ -123,35 +123,25 @@ Verificamos la creacion del grupo de hosts
 
 
 ## Laboratorio de la Unidad
-<br>1. Cree un nuevo entorno de ciclo de vida que contengo lo siguiente: **DesarrolloX**, **CertificacionX**, **ProduccionX**. Donde **X** es reemplazado por el numero de estación de cada asistente que va del **1** al **6**. Ejemplo: Desarrollo9, Certificacion9, Produccion9.
+<br>1. Cree un nuevo entorno de ciclo de vida que contengo lo siguiente: **Desarrollo**, **Certificacion**, **Produccion**. similar al aprendido en clases DEV > QA > PROD
 <br>
-<br>2. Cree una vista de contenido llamado BaseX, en la versión inicial solamente adicione el repositorio yum: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8 y publíquelo. Una vez publicado promuévalo a los ambientes **DesarrolloX, CertificacionX y ProduccionX**.
+<r>2. Cree un sistema operativo RHEL 9 para usarlo en secciones posteriores
 <br>
-<br>3. Genere una nueva versión 2.0 de la vista de contenido Base que incluya los repositorios: **Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8** y **Red Hat Satellite Tools 6.9 for RHEL 8 x86_64 RPMs**  y promuevalo a los ambientes: **DesarrolloX, CertificacionX y ProduccionX**.
+<br>3. Cree vistas de contenido con los siguientes nombres y asocielas a los entornos respectivos segun sus nombres
+<br>CV_DEV_RHEL9
+<br>CV_QA_RHEL9
+<br>CV_PROD_RHEL9
+<br>Publique los repositorios de RHEL9 en cada vista de contenido
 <br>
-<br>4. Genere una llave de activación para realizar un re-registro del clienteX de su laboratorio, utilizar los siguientes datos:
-       ActivationKey Name: **AK_BASE_RHEL8_PROD_USER_X**.<br>
-       En ambiente seleccionar: **ProduccionX**<br>
-       Vista de Contenido: **BaseX**<br>
-       Tab de suscripciones: **Asegurarse que la opción de auto-attach si este habilitada**<br>
-       Tab de Juego de repositorios: **Habilitar los repositorios correspondientes**<br>
-       Finalmente Registrar el cliente correspondiente utilizando la llave de activación creada: <br>
-       **subscription-manager register --org="Opennova" --activationkey="AK_BASE_RHEL8_PROD_USER_X"**<br>
-       verificar que dispone de los repositorios configurados en la vista de contenido. Pruebe instalar el paquete **zsh**.
-
-Nota: Para des-registrar un cliente hacerlo de la opción Host > Content Host, seleccionar su cliente y en la parte superior derecha en la opción de selección darle delete.
-
-En el terminal del cliente ejecutar:
-```
-[root@client01 ~]# subscription-manager unregister
-[root@client01 ~]# subscription-manager clean
-[root@client01 ~]# yum clean all
-```
-Luego utilizar su llave de activación nueva y validar que su cliente este registrado correctamente dentro de Host > Content Host
-
+<br>4. Cree las llaves de activación y asócielas a las CV respectivas
+<br>AK_DEV_RHEL9
+<br>AK_QA_RHEL9
+<br>AK_PROD_RHEL9
 <br>
-
-
-
+<br>5. Cree los grupos de host necesarios para consolidar todos los recursos creados en el capitulo
+<br>HG_DEV_RHEL9
+<br>HG_QA_RHEL9
+<br>HG_PROD_RHEL9
+<br>
 
 <p><br><a href="sat.md">volver</a></p>
