@@ -1,4 +1,5 @@
-<h1>Gestión de Vistas</h1>
+<h1>Gestión de Ciclo de Vida</h1>
+<p align="left"><img src="../images/sat.png?raw=true"width="800" height="400"></p>
 
 <p>
 <strong>Meta:</strong>
@@ -25,6 +26,54 @@
 
 <h3><br><strong>Crear un nuevo entorno</strong></h3>
 <p align="left"><img src="../images/sat103.png?raw=true"width="800" height="400"></p>
+
+Se crea un nuevo entorno
+<p align="left"><img src="../images/sat104.png?raw=true"width="800" height="400"></p>
+
+Ingresamos los datos para el entorno de Desarrollo
+<p align="left"><img src="../images/sat105.png?raw=true"width="800" height="400"></p>
+
+Verificamos la creación del entorno DEV y agregamos uno nuevo anidado al DEV
+<p align="left"><img src="../images/sat106.png?raw=true"width="800" height="400"></p>
+
+Creamos el nuevo entorno de pruebas sujeto a DEV
+<p align="left"><img src="../images/sat107.png?raw=true"width="800" height="400"></p>
+
+Verificamos la creación de QA y agregamos uno nuevo
+<p align="left"><img src="../images/sat108.png?raw=true"width="800" height="400"></p>
+
+Ingresamos los datos del entorno PROD que será para sistemas operativos productivos
+<p align="left"><img src="../images/sat109.png?raw=true"width="800" height="400"></p>
+
+Validamos la creación de los entorno DEV > QA > PROD
+<p align="left"><img src="../images/sat110.png?raw=true"width="800" height="400"></p>
+
+Cuando los sitemass operativos se van registrando en la plataforma satellite, las versiones se van registrando en la sección de sistemas operativos, como buena practica crearemos un RHEL9 generico, para ello clonamos una version existente
+<p align="left"><img src="../images/sat111.png?raw=true"width="800" height="400"></p>
+
+Modificamos los datos para que el clone sea version 9 sin releases
+<p align="left"><img src="../images/sat112.png?raw=true"width="800" height="400"></p>
+
+Verificamos los sistemas operativos
+<p align="left"><img src="../images/sat113.png?raw=true"width="800" height="400"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Para crear un nuevo entorno, nos dirigimos a la seccion Content > Lifecycle Environments  y le damos crear un nuevo entorno de ciclo de vida.
 <br>
