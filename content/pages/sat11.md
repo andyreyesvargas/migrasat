@@ -171,7 +171,7 @@ Si volvemos a buscar la errata con el mismo codigo, ya no deberia volver a apare
 
 # Laboratorio 01: 
 **NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
-<br>Genere los siguientes reportes en un archivo de texto 
+<br>Genere los siguientes reportes en archivos de texto 
 <br> - Todos los RHSA del cliente satellite
 <br> - RHSA de severidad critica del cliente satellite
 <br> - RHSA de severidad importante del cliente satellite
