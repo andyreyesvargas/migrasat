@@ -167,6 +167,26 @@ La tarea en verde indica que se aplico de forma correcta
 <p align="left"><img src="../images/sat153.png?raw=true"></p>
 
 Si volvemos a buscar la errata con el mismo codigo, ya no deberia volver a aparecer
+<p align="left"><img src="../images/sat154.png?raw=true"></p>
+
+
+# Actualizando paquetes
+En la sección de paquetes, podemos buscar los paquetes instalados en el sistema operativo y revisar si tienen actualizaciones pendientes, en el ejemplo aplicamos una actualizacion para el paquete audit
+<p align="left"><img src="../images/sat155.png?raw=true"></p>
+
+Verificamos que el paquete audir ya no tienes actualizaciones pendientes
+<p align="left"><img src="../images/sat156.png?raw=true"></p>
+
+# Instalando paquetes
+Tambien podemos instalar paquetes que no estan en el sistema
+<p align="left"><img src="../images/sat157.png?raw=true"></p>
+
+Buscamos el paquete que deseamos instalar
+<p align="left"><img src="../images/sat158.png?raw=true"></p>
+
+Validamos la instalación
+<p align="left"><img src="../images/sat159.png?raw=true"></p>
+
 
 
 # Laboratorio 01: 
@@ -193,5 +213,9 @@ Si volvemos a buscar la errata con el mismo codigo, ya no deberia volver a apare
 **NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
 <br>Utilizando el CLI o GUI, aplicar todos los RHSA de severidad critica
 
+
+# Laboratorio 05: 
+<br>Utilizando el GUI actualice el paquete audit a la ultima version disponible
+<br>Utilizando el GUI instale el paquete vsftpd
 
 <p><br><a href="sat.md">volver</a></p>
