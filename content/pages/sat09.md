@@ -88,126 +88,39 @@ Validar la creación de la vista de contenido
 <h3><br><strong>Crear una nueva llave de activación</strong></h3>
 <p align="left"><img src="../images/sat123.png?raw=true"></p>
 
+Crear la llave nueva
+<p align="left"><img src="../images/sat124.png?raw=true"></p>
 
+Ingresar los datos de la llave referenciando al entorno DEV y al CV de RHEL9
+<p align="left"><img src="../images/sat125.png?raw=true"></p>
 
+Actualizar la llave para que se marque como sistema operativo EL 9
+<p align="left"><img src="../images/sat126.png?raw=true"></p>
 
+Agregar los repositorios de RHEL9 sincronizados en capítulos previos
+<p align="left"><img src="../images/sat127.png?raw=true"></p>
 
+<h3><br><strong>Crear una nueva grupo de hosts</strong></h3>
+<p align="left"><img src="../images/sat128.png?raw=true"></p>
 
+Crear un nuevo grupo
+<p align="left"><img src="../images/sat129.png?raw=true"></p>
 
+Ingresar los datos para que referencie a los recursos creados hasta el momento
+<p align="left"><img src="../images/sat130.png?raw=true"></p>
 
+Aunque no es relevante para el registro, podemos seleccionar la red de nuestro laboratorio
+<p align="left"><img src="../images/sat131.png?raw=true"></p>
 
+De igual manera el sistema operativo
+<p align="left"><img src="../images/sat132.png?raw=true"></p>
 
+Es importante seleccionar la llave de activación del ejercicio anterior
+<p align="left"><img src="../images/sat133.png?raw=true"></p>
 
+Verificamos la creacion del grupo de hosts
+<p align="left"><img src="../images/sat134.png?raw=true"></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Para crear un nuevo entorno, nos dirigimos a la seccion Content > Lifecycle Environments  y le damos crear un nuevo entorno de ciclo de vida.
-<br>
-<br>
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10101R.jpg?raw=true"width="800" height="400"></p>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10102R.jpg?raw=true"width="800" height="400"></p>
-En la pestaña de nuevo entorno colocar:<br>
-Nombre: <strong>Build</strong><br>
-Label: <strong>Build</strong><br> 
-Descripción: <strong>Build Environment</strong><br>
-<br>
-Luego darle click al boton <strong>Save</strong><br>
-<br>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10103R.jpg?raw=true"></p>
-<br>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10104R.jpg?raw=true"width="800" height="400"></p>
-Crear un nuevo entorno llamado Test que este a continuacion de Build<br>
-Nombre: <strong>Test</strong><br>
-Label: <strong>Test</strong><br> 
-Prior Environment: <strong>Build</strong><br>
-<br>
-Luego darle click al boton <strong>Save</strong><br>
-<br>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10105R.jpg?raw=true"></p>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10106R.jpg?raw=true"></p>
-Crear un nuevo entorno llamado Test que este a continuacion de Build<br>
-Nombre: <strong>Deploy</strong><br>
-Label: <strong>Deploy</strong><br> 
-Prior Environment: <strong>Test</strong><br>
-<br>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10107R.jpg?raw=true"></p>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat10108R.jpg?raw=true"></p>
-
-<br><h3><strong>Crear y publicar una vista en el entorno</strong></h3>
-
-Ahora que tenemos un nuevo entorno, podemos crear una nueva vista en la seccion Content > Content Views 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat900.png?raw=true">
-
-Nombramos la vista nueva
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat901.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat902.png?raw=true">
-
-En el vista nueva, seleccionamos el repositorio Base del canal de RHEL8 para incluirlo
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat904.png?raw=true">
-
-Ahora podemos publicar la vista
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat905.png?raw=true">
-
-Guardamos la version 1 de nuestra vista
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat906.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat907.png?raw=true">
-Cuando termine de publicar, con le damos click al boton promover
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat908.png?raw=true">
-
-Ahora le damos check a nuestro entorno para que la vista sea promovida en ella
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat909.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat910.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat911.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat912.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat913.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat914.png?raw=true">
-
-<br><h3><strong>Crear llaves de activación</strong></h3>
-Ahora que tenemos una vista de contenido, podemos crear una llave de activación Content > Activation Keys 
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat915.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat916.png?raw=true">
-
-Ingresar los datos del nombre de la llave de activación, seleccionar el ambiente y crear
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat917.png?raw=true">
-
-Asegurarse que este seleccionada la versión de Red Hat Enterprise Linux 8
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat918.png?raw=true">
-
-Seleccionar las suscripciones validas para la llave de activacion
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat919.png?raw=true">
-
-Asegurarse que los repositorios correctos estén habilitados
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat920.png?raw=true">
 
 ## Laboratorio de la Unidad
 <br>1. Cree un nuevo entorno de ciclo de vida que contengo lo siguiente: **DesarrolloX**, **CertificacionX**, **ProduccionX**. Donde **X** es reemplazado por el numero de estación de cada asistente que va del **1** al **6**. Ejemplo: Desarrollo9, Certificacion9, Produccion9.
