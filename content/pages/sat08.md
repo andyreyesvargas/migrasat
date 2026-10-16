@@ -238,38 +238,27 @@ All local data removed
 
 # Crear plan de sincronizacion programado. (Demostrativo)
 **Content > Sync Plans** 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat827.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat96.png?raw=true"width="800" height="400"></p>
 
 En la pagina de Planes de sincronizacion darle click al botón **Crear plan de sincronizacion**
 
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat828.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat97.png?raw=true"width="800" height="400"></p>
 
 En la pagina Crear plan de sincronizacion ingresar los datos como se muestra en la siguiente imagen y darle click al boton **Guardar**
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat829.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat98.png?raw=true"width="800" height="400"></p>
 
 Verificar en el tab de Información que el plan se haya creado de manera correcta
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat830.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat99.png?raw=true"width="800" height="400"></p>
 
 En el tab de Productos se deberá añadir el producto para la sincronizacion programada
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat831.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat100.png?raw=true"width="800" height="400"></p>
 
 Validar que el producto se ha ingresado de manera correcta
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat832.png?raw=true"width="800" height="400"></p>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat833.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat101.png?raw=true"width="800" height="400"></p>
 
-Ir nuevamente al tab de Información y verificar que tenga en Información básica la cantidad de 1 en Productos como se muestra en la imagen
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat834.png?raw=true"width="800" height="400"></p>
+Si el plan se ejecuta correctamente en el tiempo, la ventana de sincronización de contenido deberia actualizarse constantemente
+<p align="left"><img src="../images/sat102.png?raw=true"width="800" height="400"></p>
 
-En Planes de sincronizacion se deberá haber creado el plan indicado
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat835.png?raw=true"width="800" height="400"></p>
-
-# Visualizar contenidos sincronizados. (Demostrativo)
-**Content > Sync Status** 
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat836.png?raw=true"width="800" height="400"></p>
-
-Visualizar el estado de la sincronizacion de los productos
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat837.png?raw=true"width="800" height="400"></p>
 
 # Laboratorio de la Unidad: 
 **NOTA: Utilizar el recurso ftp://classroom.opennova.pe/custom_resources/ o ftp://192.168.100.203/custom_resources/ ahi encontrara la llave GPG y los paquetes de java IBM**
