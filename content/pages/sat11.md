@@ -181,12 +181,12 @@ Si volvemos a buscar la errata con el mismo codigo, ya no deberia volver a apare
 
 # Laboratorio 02: 
 **NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
-<br>Utilizando el GUI, aplicar el RHBA-2026:46513 en el cliente satellite
+<br>Utilizando el CLI, aplicar el RHBA-2026:46513 en el cliente satellite
 
 
 # Laboratorio 03: 
 **NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
-<br>Utilizando el CLI, aplicar el RHBA-2024:9274 en el cliente satellite
+<br>Utilizando el GUI, aplicar el RHBA-2024:9274 en el cliente satellite
 
 
 # Laboratorio 04: 
