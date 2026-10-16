@@ -25,8 +25,9 @@ Manual de procedimientos del workshop de la solución Red Hat Satellite versión
 <br><a href="sat09.md">Gestión de Ciclo de vida</a>
 <br><a href="sat10.md">Registrando Hosts de contenido</a>
 <br><a href="sat11.md">Gestión de paquetería de software</a>
-<br><a href="sat15">Gestión de ejecución remota vía Red Hat Satellite</a>
-<br><a href="sat17">Gestión de ejecución remota con puppet vía Red Hat Satellite</a>
-<br><a href="sat16">Gestión de ejecución remota con ansible vía Red Hat Satellite</a>
+<br><a href="sat12.md">Gestión de ejecución remota vía Red Hat Satellite</a>
+<br><a href="sat13.md">Gestión de ejecución remota con ansible vía Red Hat Satellite</a>
+<br><a href="sat14.md">Gestión de Red Hat Insights</a>
+<br><a href="sat15.md">Gestión de Políticas de Seguridad Openscap</a>
 
 <p><br><a href="../../README.md">volver</a></p>
