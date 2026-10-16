@@ -261,21 +261,20 @@ Si el plan se ejecuta correctamente en el tiempo, la ventana de sincronización 
 
 
 # Laboratorio de la Unidad: 
-**NOTA: Utilizar el recurso ftp://classroom.opennova.pe/custom_resources/ o ftp://192.168.100.203/custom_resources/ ahi encontrara la llave GPG y los paquetes de java IBM**
+**NOTA: Utilizar el recursos disponibles en ftp://ftp.migraciones.gob.pe para completar el laboratorio de la unidad**
 
 <br>**1. Crear una credencial de nombre "CustomX GPG KEY" como se indica en la demostración, utilizar el procedimiento como referencia**
 <br> La llave gpg la podrá descargar del recurso compartido.
 <br>
-<br>**2. Crear un Producto de nombre "CustomX Java" como se indica en la demostración, utilizar el procedimiento como referencia**
-<br> El nombre del repositorio del Producto se llamara "Java IBM" y podrá descargar los paquetes del recurso compartido
+<br>**2. Crear un Producto de nombre "Custom Product" como se indica en la demostración, utilizar el procedimiento como referencia**
+<br> El nombre del repositorio del Producto se llamara "jfrog" y podrá descargar los paquetes del recurso compartido
 <br>
-<br>**3. Deberá actualializar la llave de activación AK_RHEL8_USER_X como se indica en la demostración, utilizar el procedimiento como referencia**
-<br> Deberá suscribir el producto CustomX Java a la llave de activación
+
+<br>**3. Registrar el cliente e instalar el paquete del repositorio customizado**
+<br> Utilizar su cliente disponible y acorde a la demostración, instalar el paquete jfrog-cli con el repositorio customizado, no use la descarga manual de RPM e instalacion local con yum/dnf, use el repositorio customizado del producto customizado.
+<br>Despues de instalar el RPM jfrog-cli, desuscriba el sistema client del satellite
 <br>
-<br>**4. Registrar el cliente con la llave de activación AK_RHEL8_USER_X modificada como se indica en la demostración para que incluya el canal personalizado CustomX Java, utilizar el procedimiento como referencia**
-<br> Borrar el cliente asignado de la pagina de Host de contenido y luego aplicar los comandos subscription-manager para des-registrar u registrar el host de contenido con la nueva llave. Adicionalemente deberá instalar el paquete java-1.8.0-ibm, este deberá poder instalarse sin errores.
-<br>
-<br>**5. Crear un plan de sincronizacion llamado "CustomX Sync Plan" como se indica en la demostración, utilizar el procedimiento como referencia**
-<br> Asociar el producto "CustomX Java" y deberá ejecutarse todos los viernes a las 11:45 pm. ( Puede usar este valor en el cron personalizado 45 11 * * 5)
+<br>**4. Crear un plan de sincronizacion llamado "Custom Sync Plan" como se indica en la demostración, utilizar el procedimiento como referencia**
+<br> Asociar el producto "Red Hat Enterprise Linux for x86_64" y deberá ejecutarse todos los viernes a las 11:45 pm. ( Puede usar este valor en el cron personalizado 45 11 * * 5)
 
 <p><br><a href="sat.md">volver</a></p>
