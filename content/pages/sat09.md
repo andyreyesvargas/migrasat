@@ -1,5 +1,6 @@
 <h1>Gestión de Ciclo de Vida</h1>
-<p align="left"><img src="../images/sat.png?raw=true"width="800" height="400"></p>
+<p align="left"><img src="../images/sat.png?raw=true"></p>
+<p>
 
 <p>
 <strong>Meta:</strong>
