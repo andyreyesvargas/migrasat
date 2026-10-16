@@ -125,6 +125,7 @@ Verificamos la creacion del grupo de hosts
 ## Laboratorio de la Unidad
 <br>1. Cree un nuevo entorno de ciclo de vida que contengo lo siguiente: **Desarrollo**, **Certificacion**, **Produccion**. similar al aprendido en clases DEV > QA > PROD
 <br>
+<br>
 <r>2. Cree un sistema operativo RHEL 9 para usarlo en secciones posteriores
 <br>
 <br>3. Cree vistas de contenido con los siguientes nombres y asocielas a los entornos respectivos segun sus nombres
