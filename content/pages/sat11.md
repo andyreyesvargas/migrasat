@@ -130,47 +130,52 @@ Vuelva a validar la cantidad de erratas descubiertas en el servidor y compare co
 ```
 
 # Gestión de actualizaciones de un sistema cliente por GUI
-Desde la GUI de Satellite, podemos gestionar la paqueteria de software de los sistemas registrados, para ello vamos a la seccion HOST > HOSTS DE CONTENIDO
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2736.png?raw=true"width="800" height="400"></p>
+Desde la GUI de Satellite, ingresamos a la sección de hosts de contenido
+<p align="left"><img src="../images/sat142.png?raw=true"></p>
 
-Buscamos nuestro cliente RHEL8 y vemos la seccion de actualizaciones disponibles, visto de arriba hacia abajo, se muestran las actualizaciones de seguridad, correccion, mejora y paquetes.
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2737.png?raw=true"width="800" height="400"></p>
+Seleccionamos el cliente satellite
+<p align="left"><img src="../images/sat143.png?raw=true"></p>
 
-Le damos click al nombre del equipo para ingresar a las opciones
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2738.png?raw=true"width="800" height="400"></p>
+Examinamos la sección de Contenido > Errata
+<p align="left"><img src="../images/sat144.png?raw=true"></p>
 
-Ingresamos a la seccion de ERRATA
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2739.png?raw=true"width="800" height="400"></p>
+Podemos filtras las erratas por el tipo
+<p align="left"><img src="../images/sat145.png?raw=true"></p>
 
-Podemos filtrar las erratas para que solo muestre las actualizaciones de seguridad
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2740.png?raw=true"width="800" height="400"></p>
+Tambien filtrar por la severidad
+<p align="left"><img src="../images/sat146.png?raw=true"></p>
 
-Tambien podemos filtrar por severidad, en este caso las actualizaciones criticas
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2741.png?raw=true"width="800" height="400"></p>
+Incluso con la combinación de tipo y severidad
+<p align="left"><img src="../images/sat147.png?raw=true"></p>
 
-Tambien las del nivel moderado
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2742.png?raw=true"width="800" height="400"></p>
+Tambien con el codigo o ID de la errata
+<p align="left"><img src="../images/sat148.png?raw=true"></p>
 
-Si quisieras ver solo las erratas de correccion
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2743.png?raw=true"width="800" height="400"></p>
+Ingresamos al codigo de la errata
+<p align="left"><img src="../images/sat149.png?raw=true"></p>
 
-De la lista anterior de bugfixes, seleccionamos la mejora de SELinux RHBA-2021:5174, le damos click al nombre de la errata para ver los detalles
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2744.png?raw=true"width="800" height="400"></p>
+Examinamos el contenido de la errata para conocer los detalles
+<p align="left"><img src="../images/sat150.png?raw=true"></p>
 
-Analizamos la informacion de la errata y lo que involucra la actualizacion para determinar si podemos aplicarla
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2745.png?raw=true"width="800" height="400"></p>
+Podemos ejecutar la aplicación de la errata seleccionándola y aplicandola
+<p align="left"><img src="../images/sat151.png?raw=true"></p>
 
-Si tomamos la decision de aplicar la errata, la seleccionamos en la lista y la aplicamos via remote-execution
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2746.png?raw=true"width="800" height="400"></p>
+Podemos revisar como se esta ejecutando
+<p align="left"><img src="../images/sat152.png?raw=true"></p>
 
-La tarea deberia ejecutarse de forma correcta
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2747.png?raw=true"width="800" height="400"></p>
+La tarea en verde indica que se aplico de forma correcta
+<p align="left"><img src="../images/sat153.png?raw=true"></p>
 
-Volvemos a la vista de bugfixes y validamos que la actualizacion RHBA-2021:5174 ya no este disponible
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/2748.png?raw=true"width="800" height="400"></p>
+Si volvemos a buscar la errata con el mismo codigo, ya no deberia volver a aparecer
+
 
 # Laboratorio 01: 
-<br>- En su cliente RHEL8 instale el paquete firefox con el siguiente comando
+**NOTA: en ningun laboratorio usar el comando yum update -y**
+<br>Genere los siguientes reportes en un archivo de texto 
+<br> - 
+
+
+
 ```
 # yum install firefox-68.6.0-1.el8_1.x86_64
 ```
