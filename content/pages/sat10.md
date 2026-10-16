@@ -175,6 +175,26 @@ Tambien podemos verificar que una suscripción fue consumida
 
 
 
+# Quitar el registro de un host de contenido. (Demostrativo)
+Para desuscribir y borrar el registro de un host de satellite, se debe hacer en 2 partes, primero en el terminal
+```
+[root@client ~]# subscription-manager unregister
+Unregistering from: satellite.migraciones09.gob.pe:443/rhsm
+System has been unregistered.
+[root@client ~]# subscription-manager remove --all
+0 subscriptions removed from this system.
+[root@client ~]# subscription-manager clean
+All local data removed
+```
+
+El sistema aun podria aparecer en la sección de hosts en el satellite, por ello debe borrarse por el GUI tambien
+<p align="left"><img src="../images/sat140.png?raw=true"></p>
+
+Verificamos que se recupero la suscripción
+<p align="left"><img src="../images/sat141.png?raw=true"></p>
+
+
+
 
 
 
