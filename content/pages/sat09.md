@@ -58,6 +58,20 @@ Modificamos los datos para que el clone sea version 9 sin releases
 Verificamos los sistemas operativos
 <p align="left"><img src="../images/sat113.png?raw=true"width="800" height="400"></p>
 
+<h3><br><strong>Crear una nueva vista de contenido</strong></h3>
+<p align="left"><img src="../images/sat114.png?raw=true"width="800" height="400"></p>
+
+Crear uno nuevo
+<p align="left"><img src="../images/sat115.png?raw=true"width="800" height="400"></p>
+
+Ingresar los datos para una vista asociada al entorno DEV para sistemas RHEL9
+<p align="left"><img src="../images/sat116.png?raw=true"width="800" height="400"></p>
+
+
+
+
+
+
 
 
 
