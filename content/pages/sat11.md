@@ -170,43 +170,28 @@ Si volvemos a buscar la errata con el mismo codigo, ya no deberia volver a apare
 
 
 # Laboratorio 01: 
-**NOTA: en ningun laboratorio usar el comando yum update -y**
+**NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
 <br>Genere los siguientes reportes en un archivo de texto 
-<br> - 
-
-
-
-```
-# yum install firefox-68.6.0-1.el8_1.x86_64
-```
-<br>- Por la linea de comandos intente hacer un análisis, proponga y ejecute la actualización de ser necesaria para firefox. Una vez identificado el código puede utilizar:
-```
-# yum update --advisory=<Codigo_Identificado>
-```
-
+<br> - Todos los RHSA del cliente satellite
+<br> - RHSA de severidad critica del cliente satellite
+<br> - RHSA de severidad importante del cliente satellite
+<br> - RHSA de severidad moderada del cliente satellite
+<br> - RHSA de severidad baja del cliente satellite
+<br> - Todos los RHBA del cliente satellite
 
 # Laboratorio 02: 
-<br>- En su cliente RHEL8 instale el paquete vsftpd con el siguiente comando
-```
-# yum install vsftpd-3.0.3-28.el8.x86_64
-```
-<br>- Por la web de satellite intente hacer un análisis, proponga y ejecute la actualización de ser necesaria para vsftpd
+**NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
+<br>Utilizando el GUI, aplicar el RHBA-2026:46513 en el cliente satellite
+
 
 # Laboratorio 03: 
-<br>- En su cliente RHEL8 Verifique y aplique las erratas que sean solo de nivel CRITICO e IMPORTANTE
+**NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
+<br>Utilizando el CLI, aplicar el RHBA-2024:9274 en el cliente satellite
 
-Solucion:
-<br>
-<br> **Verificar erratas**
-```
-# yum updateinfo list updates --sec-severity=Critical
-# yum updateinfo list updates --sec-severity=Important
-```
 
-<br> **Aplicar erratas**
-```
-# yum update --sec-severity=Critical
-# yum update --sec-severity=Important
-```
+# Laboratorio 04: 
+**NOTA: en ningun laboratorio usar el comando yum update -y, tampoco aplicar mas alla de lo solicitado**
+<br>Utilizando el CLI o GUI, aplicar todos los RHSA de severidad critica
 
-<p><br><a href="sat">volver</a></p>
+
+<p><br><a href="sat.md">volver</a></p>
