@@ -67,6 +67,33 @@ Crear uno nuevo
 Ingresar los datos para una vista asociada al entorno DEV para sistemas RHEL9
 <p align="left"><img src="../images/sat116.png?raw=true"></p>
 
+Ver los repositorios disponibles para la vista
+<p align="left"><img src="../images/sat117.png?raw=true"></p>
+
+Agregar los 3 repositorios para RHEL9 sincronizados en capítulos previos
+<p align="left"><img src="../images/sat118.png?raw=true"></p>
+
+Publicar una nueva version
+<p align="left"><img src="../images/sat119.png?raw=true"></p>
+
+Promoverlo en el ambiente DEV
+<p align="left"><img src="../images/sat120.png?raw=true"></p>
+
+Finalizar la publicación
+<p align="left"><img src="../images/sat121.png?raw=true"></p>
+
+Validar la creación de la vista de contenido
+<p align="left"><img src="../images/sat122.png?raw=true"></p>
+
+<h3><br><strong>Crear una nueva llave de activación</strong></h3>
+<p align="left"><img src="../images/sat123.png?raw=true"></p>
+
+
+
+
+
+
+
 
 
 
