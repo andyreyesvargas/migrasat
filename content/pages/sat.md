@@ -22,7 +22,7 @@ Manual de procedimientos del workshop de la solución Red Hat Satellite versión
 <br><a href="sat06.md">Gestión de usuarios, grupos y roles</a>
 <br><a href="sat07.md">Gestión de manifiestos y repositorios</a>
 <br><a href="sat08.md">Gestión de Contenido</a>
-<br><a href="sat09">Gestión de Ciclo de vida</a>
+<br><a href="sat09.md">Gestión de Ciclo de vida</a>
 <br><a href="sat701">Registrando Hosts de contenido</a>
 <br><a href="sat702">Gestión de paquetería de software</a>
 <br><a href="sat15">Gestión de ejecución remota vía Red Hat Satellite</a>
