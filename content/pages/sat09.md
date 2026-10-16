@@ -24,6 +24,8 @@
 
 
 <h3><br><strong>Crear un nuevo entorno</strong></h3>
+<p align="left"><img src="../images/sat103.png?raw=true"width="800" height="400"></p>
+
 Para crear un nuevo entorno, nos dirigimos a la seccion Content > Lifecycle Environments  y le damos crear un nuevo entorno de ciclo de vida.
 <br>
 <br>
