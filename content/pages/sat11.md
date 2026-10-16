@@ -21,41 +21,112 @@
 
 Validamos la cantidad de erratas descubiertas en el servidor, tome nota de estos datos
 ```
-# yum list-security
+[root@client ~]# yum list-security
 ```
 
 Si quisieramos listar solo los RHSA
 ```
-# yum updateinfo list security
+[root@client ~]# yum updateinfo list security
 ```
 
 Podemos filtrar los RHSA por nivel de severidad
 ```
-# yum updateinfo list updates --sec-severity=Critical
-# yum updateinfo list updates --sec-severity=Important
-# yum updateinfo list updates --sec-severity=Moderate
-# yum updateinfo list updates --sec-severity=Low
+[root@client ~]# yum updateinfo list updates --sec-severity=Critical
+[root@client ~]# yum updateinfo list updates --sec-severity=Important
+[root@client ~]# yum updateinfo list updates --sec-severity=Moderate
+[root@client ~]# yum updateinfo list updates --sec-severity=Low
 ```
 
 Si quisieramos listar solo los RHBA
 ```
-# yum updateinfo list bugfix
+[root@client ~]# yum updateinfo list bugfix
 ```
 
 
 Seleccionamos una actualizacion del tipo bugfix para corregirlas, primero examinamos la informacion detallada de la errata
 ```
-# yum updateinfo RHBA-2021:4543 --info
+[root@client ~]# yum updateinfo RHBA-2026:46513 --info
+===============================================================================
+  openssl bug fix and enhancement update
+===============================================================================
+  Update ID: RHBA-2026:46513
+       Type: bugfix
+    Updated: 2026-07-27 05:50:59
+Description: OpenSSL is a toolkit that implements the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols, as well as a full-strength general-purpose cryptography library.
+           :
+           : Bug Fix(es) and Enhancement(s):
+           :
+           : * ansible-collection-microsoft-sql Connection failure: [ASN1: NOT_ENOUGH_DATA] not enough data (_ssl.c:4192) [9.8.z] (JIRA:RHEL-210862)
+   Severity: None
 ```
 
 Tomamos la decision de aplicar la errata
 ```
-# yum update --advisory=RHBA-2021:4543
+[root@client ~]# yum update --advisory RHBA-2026:46513
+Updating Subscription Management repositories.
+Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)            57 kB/s | 4.5 kB     00:00
+Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)                 60 kB/s | 3.8 kB     00:00
+Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)              108 kB/s | 4.1 kB     00:00
+Dependencies resolved.
+===================================================================================================
+ Package                     Arch      Version              Repository                        Size
+===================================================================================================
+Upgrading:
+ openssl                     x86_64    1:3.5.8-2.el9_8      rhel-9-for-x86_64-baseos-rpms    1.5 M
+ openssl-fips-provider       x86_64    3.0.7-11.el9_8       rhel-9-for-x86_64-baseos-rpms     14 k
+ openssl-libs                x86_64    1:3.5.8-2.el9_8      rhel-9-for-x86_64-baseos-rpms    2.3 M
+Installing dependencies:
+ openssl-fips-provider-so    x86_64    3.0.7-11.el9_8       rhel-9-for-x86_64-baseos-rpms    581 k
+
+Transaction Summary
+===================================================================================================
+Install  1 Package
+Upgrade  3 Packages
+
+Total download size: 4.4 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/4): openssl-fips-provider-3.0.7-11.el9_8.x86_64.rpm              12 kB/s |  14 kB     00:01
+(2/4): openssl-fips-provider-so-3.0.7-11.el9_8.x86_64.rpm          413 kB/s | 581 kB     00:01
+(3/4): openssl-3.5.8-2.el9_8.x86_64.rpm                            1.0 MB/s | 1.5 MB     00:01
+(4/4): openssl-libs-3.5.8-2.el9_8.x86_64.rpm                       2.9 MB/s | 2.3 MB     00:00
+---------------------------------------------------------------------------------------------------
+Total                                                              2.2 MB/s | 4.4 MB     00:02
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                           1/1
+  Installing       : openssl-fips-provider-so-3.0.7-11.el9_8.x86_64                            1/7
+  Upgrading        : openssl-fips-provider-3.0.7-11.el9_8.x86_64                               2/7
+  Upgrading        : openssl-libs-1:3.5.8-2.el9_8.x86_64                                       3/7
+  Upgrading        : openssl-1:3.5.8-2.el9_8.x86_64                                            4/7
+  Cleanup          : openssl-1:3.0.7-27.el9.x86_64                                             5/7
+  Cleanup          : openssl-libs-1:3.0.7-27.el9.x86_64                                        6/7
+  Cleanup          : openssl-fips-provider-3.0.7-2.el9.x86_64                                  7/7
+  Running scriptlet: openssl-fips-provider-3.0.7-2.el9.x86_64                                  7/7
+  Verifying        : openssl-fips-provider-so-3.0.7-11.el9_8.x86_64                            1/7
+  Verifying        : openssl-fips-provider-3.0.7-11.el9_8.x86_64                               2/7
+  Verifying        : openssl-fips-provider-3.0.7-2.el9.x86_64                                  3/7
+  Verifying        : openssl-1:3.5.8-2.el9_8.x86_64                                            4/7
+  Verifying        : openssl-1:3.0.7-27.el9.x86_64                                             5/7
+  Verifying        : openssl-libs-1:3.5.8-2.el9_8.x86_64                                       6/7
+  Verifying        : openssl-libs-1:3.0.7-27.el9.x86_64                                        7/7
+Installed products updated.
+
+Upgraded:
+  openssl-1:3.5.8-2.el9_8.x86_64               openssl-fips-provider-3.0.7-11.el9_8.x86_64
+  openssl-libs-1:3.5.8-2.el9_8.x86_64
+Installed:
+  openssl-fips-provider-so-3.0.7-11.el9_8.x86_64
+
+Complete!
 ```
 
 Vuelva a validar la cantidad de erratas descubiertas en el servidor y compare con el reporte anterior
 ```
-# yum updateinfo list bugfix
+[root@client ~]# yum updateinfo list bugfix | grep RHBA-2026:46513
 ```
 
 # Gestión de actualizaciones de un sistema cliente por GUI
