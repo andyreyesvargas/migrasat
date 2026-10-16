@@ -198,11 +198,8 @@ Verificamos que se recupero la suscripción
 # Laboratorio: 
 <br>- Usando la consola web de Satellite, genere un script de registro para su cliente RHEL9 en ambiente de desarrollo
 <br>- Ejecute el registro de su cliente
-<br>- Verifique que el sistema esta correctamente registrado
-
-<br>- Ejecute el registro de su cliente
-<br>- Verifique que el sistema esta correctamente registrado
-<br>- NO desregistre el sistema de la plataforma Satellite, lo usara para la siguiente seccion
+<br>- Verifique que el sistema esta correctamente registrado y se consuma una suscripción
 
 
-<p><br><a href="sat">volver</a></p>
+
+<p><br><a href="sat.md">volver</a></p>
