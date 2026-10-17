@@ -22,7 +22,21 @@
 </p>
 
 ### Pre-requisitos para utilizar ejecución remota en Red Hat Satellite. (Demostrativo) 
-Para poder utilizar el procedimiento de ejecución remota debemos haber creado un Host Group el cual nos permita utilizar tanto el Lifecycle, Content View, Activation Key, respectivos para poder hacer el registro vía script web por la opción de Host > Register Host.
+Para poder utilizar el procedimiento de ejecución remota el sistema operativo cliente debe estar registrado en la plataforma satellite, como se muestra en la pantalla
+<p align="left"><img src="../images/sat160.png?raw=true">
+
+Aunque el procedimiento de registro via script de satellite completa los requisitos, podemos verificar la conexión remota desde el servidor satellite al client con un comando ssh usando la llave de autenticación autogenerada con un comando remoto como hostname
+```
+[root@satellite ~]# ssh -i /usr/share/foreman-proxy/.ssh/id_rsa_foreman_proxy root@client.migraciones09.gob.pe "hostname"
+client.migraciones09.gob.pe
+```
+
+
+
+
+
+
+debemos haber creado un Host Group el cual nos permita utilizar tanto el Lifecycle, Content View, Activation Key, respectivos para poder hacer el registro vía script web por la opción de Host > Register Host.
 
 Es recomendable utilizar el procedimiento de Registro de cliente utilizando el script web autogenerado por la opción Host > Register Host, ya que este a su vez internamente copia las llaves ssh del servidor satellite hacia los clientes, asi mismo realiza el procedimiento de registro en el portal de Insight y habilita el cliente insight-client.
 
