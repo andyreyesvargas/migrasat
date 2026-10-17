@@ -31,6 +31,42 @@ Aunque el procedimiento de registro via script de satellite completa los requisi
 client.migraciones09.gob.pe
 ```
 
+### Ejecutar comandos remotos via Red Hat Satellite. (Demostrativo) 
+Para ejecutar comandos simples que ingresemos por el terminal, ingresamos al cliente que deseamos se ejecute el comando
+<p align="left"><img src="../images/sat160.png?raw=true">
+
+Seleccionamos la opción de programar un trabajo
+<p align="left"><img src="../images/sat161.png?raw=true">
+
+Usamos la función command para ejecutarlo como un comando regular en el terminal
+<p align="left"><img src="../images/sat162.png?raw=true">
+
+Ingresamos el comando "cat /etc/redhat-release > /root/version" para obtener la versión del sistema operativo en un archivo de texto
+<p align="left"><img src="../images/sat163.png?raw=true">
+
+Aunque el sistema permite escoger otro usuario y credenciales para ejecutar el comando remoto, lo dejamos por default para usar la llave ssh validada al inicio del capitulo
+<p align="left"><img src="../images/sat164.png?raw=true">
+
+Mantenemos la ejecución en el cliente seleccionado
+<p align="left"><img src="../images/sat165.png?raw=true">
+
+Enviamos la tarea remota
+<p align="left"><img src="../images/sat166.png?raw=true">
+
+El sistema confirmara la correcta ejecución del job
+<p align="left"><img src="../images/sat167.png?raw=true">
+
+Tambien lo podemos verificar en el cliente
+```
+[root@client ~]# cat /root/version
+Red Hat Enterprise Linux release 9.4 (Plow)
+```
+
+
+
+
+
+
 
 
 
