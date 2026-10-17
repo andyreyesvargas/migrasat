@@ -62,6 +62,36 @@ Tambien lo podemos verificar en el cliente
 Red Hat Enterprise Linux release 9.4 (Plow)
 ```
 
+La ejecución de comandos tambien se puede hacer usando el motor de ansible en lugar del terminal tradicional, para ello seleccionamos el client
+<p align="left"><img src="../images/sat160.png?raw=true">
+
+Programamos un nuevo trabajo
+<p align="left"><img src="../images/sat161.png?raw=true">
+
+Cambiamos el motor a ansible con un comando ansible
+<p align="left"><img src="../images/sat168.png?raw=true">
+
+Ejecutamos el comando para obtenet la version de kernel "uname -r > /root/kernel" en el cliente remoto
+<p align="left"><img src="../images/sat169.png?raw=true">
+
+Mantenemos las opciones default
+<p align="left"><img src="../images/sat170.png?raw=true">
+<p align="left"><img src="../images/sat171.png?raw=true">
+<p align="left"><img src="../images/sat172.png?raw=true">
+
+El sistema nos indicara que el comando por ansible se ejecuto correctamente
+<p align="left"><img src="../images/sat173.png?raw=true">
+
+Tambien podemos verificarlo en el mismo cliente
+```
+[root@client ~]# cat /root/kernel
+5.14.0-427.13.1.el9_4.x86_64
+```
+
+
+
+
+
 
 
 
