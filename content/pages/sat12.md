@@ -88,6 +88,56 @@ Tambien podemos verificarlo en el mismo cliente
 5.14.0-427.13.1.el9_4.x86_64
 ```
 
+### Utilizando plantillas de ejecución remota en Red Hat Satellite. (Demostrativo) 
+Considerando que muchos trabajos son repetitivos y podrian ejecutarse de forma masiva, Satellite permite crear plantillas de trabajo que faciliten la ejecución remota
+
+Vamos a crear un trabajo destinado al respaldo de toda la configuración de /etc, para ello primero ingresamos a Job Templates
+<p align="left"><img src="../images/sat174.png?raw=true">
+
+Creamos un nuevo template
+<p align="left"><img src="../images/sat175.png?raw=true">
+
+Ingresamos los datos de template como el nombre backupETC y su codigo como "tar -czvf /tmp/backup.etc.$(date +"%Y%m%d%H%M%S").tar.gz /etc/*"
+<p align="left"><img src="../images/sat176.png?raw=true">
+
+Colocamos el template en la sección de commands y lo grabamos
+<p align="left"><img src="../images/sat177.png?raw=true">
+
+Buscamos el nuevo template y podemos bloquearlo para que nadie lo edite de forma accidental
+<p align="left"><img src="../images/sat178.png?raw=true">
+
+Con el template en bash listo, regresamos al cliente
+<p align="left"><img src="../images/sat160.png?raw=true">
+
+Ejecutamos un trabajo
+<p align="left"><img src="../images/sat161.png?raw=true">
+
+Ahora en lugar de escribir un comando, buscamos el template creado
+<p align="left"><img src="../images/sat179.png?raw=true">
+
+Ejecutamos todo por default
+<p align="left"><img src="../images/sat180.png?raw=true">
+<p align="left"><img src="../images/sat181.png?raw=true">
+<p align="left"><img src="../images/sat182.png?raw=true">
+<p align="left"><img src="../images/sat183.png?raw=true">
+<p align="left"><img src="../images/sat184.png?raw=true">
+
+Tambien podemos conectarnos al cliente y verificar si el backup de etc se hiso en tmp
+```
+[root@client ~]# du -sh /tmp/*
+4.3M    /tmp/backup.etc.20261017151213.tar.gz
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
