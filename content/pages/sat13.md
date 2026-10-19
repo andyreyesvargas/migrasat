@@ -1,5 +1,5 @@
 <h1>Gestión de ejecución remota con ansible vía Red Hat Satellite</h1>
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat100.png?raw=true"></p>
+<p align="left"><img src="../images/sat.png?raw=true"></p>
 <p>
 <strong>Meta:</strong>
 <br>- Entendimiento de la gestión de ejecución remota con ansible vía Red Hat Satellite.
@@ -332,4 +332,4 @@ y darle click al botón **enviar**.
 
 5. Validar vía ejecución remota y terminal que el archivo /etc/motd contenga el valor de: **Bienvenido al Workshop Red Hat Satellite! creado por User X**
 
-<p><br><a href="sat">volver</a></p>
+<p><br><a href="sat.md">volver</a></p>
