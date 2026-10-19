@@ -19,7 +19,12 @@
 </p>
 </p>
 
-## Ejecución de comandos remotos vía ansible playbooks. (Demostrativo) 
+## Ejecución de comandos remotos vía ansible roles. (Demostrativo)
+
+Para crear un rol de ansible a traves de Satellite, primero se debe ingresar a la sección
+<p align="left"><img src="../images/sat196.png?raw=true">
+
+
 
 Descargar en el servidor cliente la siguiente plantilla de ansible playbook
 ```
