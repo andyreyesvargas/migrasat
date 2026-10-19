@@ -19,7 +19,7 @@
 </p>
 </p>
 
-## Ejecución de comandos remotos vía ansible roles. (Demostrativo)
+## Ejecución de ansible roles en hosts. (Demostrativo)
 
 Para crear un rol de ansible a traves de Satellite, primero se debe ingresar a la sección
 <p align="left"><img src="../images/sat196.png?raw=true">
@@ -78,6 +78,11 @@ Este es un ejemplo de /etc/motd creado durante el workshop utilizando Ansible y 
 Este es un ejemplo de variable new_var: Migraciones Alumno 09
 Last login: Mon Oct 19 16:38:36 2026 from 192.168.109.97
 ```
+
+## Ejecución de ansible roles en host-groups. (Demostrativo)
+
+Considerando que las politicas de seguridad se aplican por ambientes o función primaria de servicios, podemos definir la ejecucion de roles por host-groups, para que sean aplicados a todos los clientes registrados en el servidor
+
 
 
 
