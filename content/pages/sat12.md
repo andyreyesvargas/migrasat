@@ -128,250 +128,64 @@ Tambien podemos conectarnos al cliente y verificar si el backup de etc se hiso e
 4.3M    /tmp/backup.etc.20261017151213.tar.gz
 ```
 
+De la misma manera, se pueden utilizar plantillas creadas en lenguaje Ansible, para ello vamos a la sección de templates
+<p align="left"><img src="../images/sat185.png?raw=true">
 
+Creamos una nueva plantilla
+<p align="left"><img src="../images/sat186.png?raw=true">
 
+Nombramos la plantilla y copiamos el codigo del programa disponible en ftp://ftp.migraciones.gob.pe/install_apache.yml
+<p align="left"><img src="../images/sat187.png?raw=true">
 
+Grabamos la plantilla cuyo objetivo es instalar el servicio apache como un Playbook de Ansible
+<p align="left"><img src="../images/sat188.png?raw=true">
 
+Tambien lo podemos bloquear para limitar las ediciones
+<p align="left"><img src="../images/sat189.png?raw=true">
 
+Ejecutamos un uevo job en el host cliente
+<p align="left"><img src="../images/sat160.png?raw=true">
+<p align="left"><img src="../images/sat161.png?raw=true">
 
+Seleccionamos la plantilla de installAPACHE
+<p align="left"><img src="../images/sat190.png?raw=true">
 
+Mantenemos los valores default
+<p align="left"><img src="../images/sat191.png?raw=true">
+<p align="left"><img src="../images/sat192.png?raw=true">
+<p align="left"><img src="../images/sat193.png?raw=true">
+<p align="left"><img src="../images/sat194.png?raw=true">
 
+Verificamos que la plantilla se ejecute correctamente
+<p align="left"><img src="../images/sat195.png?raw=true">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-debemos haber creado un Host Group el cual nos permita utilizar tanto el Lifecycle, Content View, Activation Key, respectivos para poder hacer el registro vía script web por la opción de Host > Register Host.
-
-Es recomendable utilizar el procedimiento de Registro de cliente utilizando el script web autogenerado por la opción Host > Register Host, ya que este a su vez internamente copia las llaves ssh del servidor satellite hacia los clientes, asi mismo realiza el procedimiento de registro en el portal de Insight y habilita el cliente insight-client.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1000.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1001.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1002.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1003.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1004.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1005.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1006.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1007.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1008.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1009.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1010.png?raw=true">
-
-**NOTA: En el caso de utilizar otro procedimiento de registro de clientes considerar copiar las llaves ssh del servidor satellite hacia los clientes como indica la siguiente linea.**
+Aunque el mensaje de satellite muestra la ejecucion en verde, podemos ir al client y verificarlo por terminal
 ```
-[root@satellite ~]# ssh-copy-id -i ~foreman-proxy/.ssh/id_rsa_foreman_proxy.pub root@client01
-/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/usr/share/foreman-proxy/.ssh/id_rsa_foreman_proxy.pub"
-The authenticity of host 'client01 (192.168.0.191)' can't be established.
-ECDSA key fingerprint is SHA256:ofx/QmfXcWBaH9a9/7FxYP9ga7eerw0DzTLFso+IR9A.
-ECDSA key fingerprint is MD5:17:47:6d:4f:39:ae:f9:30:10:76:6f:86:3c:1d:e3:1d.
-Are you sure you want to continue connecting (yes/no)? yes
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
-My custom ssh banner from Satellite!
-root@client01's password:
+[root@client ~]# rpm -q httpd
+httpd-2.4.62-13.el9_8.6.x86_64
+[root@client ~]# systemctl status httpd
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Mon 2026-10-19 14:58:16 -05; 47s ago
+       Docs: man:httpd.service(8)
+   Main PID: 4026 (httpd)
+     Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/>
+      Tasks: 177 (limit: 22944)
+     Memory: 22.4M
+        CPU: 148ms
+     CGroup: /system.slice/httpd.service
+             ├─4026 /usr/sbin/httpd -DFOREGROUND
+             ├─4027 /usr/sbin/httpd -DFOREGROUND
+             ├─4028 /usr/sbin/httpd -DFOREGROUND
+             ├─4029 /usr/sbin/httpd -DFOREGROUND
+             └─4030 /usr/sbin/httpd -DFOREGROUND
 
-Number of key(s) added: 1
-
-Now try logging into the machine, with:   "ssh 'root@client01'"
-and check to make sure that only the key(s) you wanted were added.
+Oct 19 14:58:16 client.migraciones09.gob.pe systemd[1]: Starting The Apache HTTP Server...
+Oct 19 14:58:16 client.migraciones09.gob.pe httpd[4026]: Server configured, listening on: port 80
+Oct 19 14:58:16 client.migraciones09.gob.pe systemd[1]: Started The Apache HTTP Server.
 ```
 
-### Ejecución de comandos remotos vía comandos SSH. (Demostrativo)
 
-Para ir a las opciones de ejecución remota podemos utilizar la opción de **Hosts > Todos los hosts**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1011.png?raw=true">
-
-Luego seleccionar el cliente respectivo y darle click sobre el **Nombre**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1012.png?raw=true">
-
-Luego seleccionar la opción de **Programar trabajo remoto**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1013.png?raw=true">
-
-Dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Commands**
-* Plantilla de trabajo: **Run Command - SSH Default**
-* command: **df -h**
-
-Darle click a botón **enviar**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1014.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1015.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1016.png?raw=true">
-
-Observar la salida correcta de la tarea ejecutada remotamente.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1017.png?raw=true">
-
-Volvemos nuevamente a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Packages**
-* Plantilla de trabajo: **Package Action - SSH Default**
-* action: **install**
-* package: **zsh**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1017-1.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1017-2.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1017-3.png?raw=true">
-
-### Ejecución de comandos remotos vía comandos Ansible. (Demostrativo)
-
-Volvemos nuevamente a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Ansible Commands**
-* Plantilla de trabajo: **Run Command - Ansible Default**
-* command: **lsblk -f**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1018.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1019.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1020.png?raw=true">
-
-Volvemos nuevamente a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Ansible Packages**
-* Plantilla de trabajo: **Package Action - Ansible Default**
-* state: **present**
-* name: **net-tools, bind-utils, sos, tree, vim**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1021.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1022.png?raw=true">
-
-Volvemos nuevamente a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Ansible Commands**
-* Plantilla de trabajo: **Run Command - Ansible Default**
-* command: **rpm -qa | grep -e net-tools -e bind-utils -e sos -e tree -e vim**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1023.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1024.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1025.png?raw=true">
-
-### Ejecución de comandos remotos utilizando bash shell scripting. (Demostrativo)
-
-Ir a las opciones de **job templates** utilizar la opción de **Hosts > Job templates**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1026.png?raw=true">
-
-Dentro de la pagina **Plantillas de trabajo** seleccionar **Nueva plantilla de trabajo**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1027.png?raw=true">
-
-En el tab **Plantilla** colocar la siguiente información:
-
-* Plantilla de trabajo|Nombre: **Backup etc directory**
-
-Descargar el siguiente script [ftp://192.168.100.203/bash/backup.sh](ftp://192.168.100.203/bash/backup.sh) a su estación cliente e inspeccionar.
-```
-# wget ftp://192.168.100.203/bash/backup.sh
-```
-
-* Dentro del **editor** colocar el contenido del **script backup.sh**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1028.png?raw=true">
-
-En el tab **Empleo** seleccionar:
-
-* Categoría de trabajo: Commands
-* Provider Type: SSH
-
-y darle click al botón **enviar**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1029.png?raw=true">
-
-Volvemos nuevamente a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Commands**
-* Plantilla de trabajo: **Backup etc directory**
-
-y darle click al botón **enviar**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1030.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1031.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1032.png?raw=true">
-
-Clonar la plantilla de trabajo **Backup etc directory**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1033.png?raw=true">
-
-En la opción de Plantilla de Trabajo| Nombre indicar Backup etc directory User 1 luego darle click al botón enviar, con esto ya tenemos una copia de una plantilla de trabajo. 
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1034.png?raw=true">
-
-Verificamos que se haya creado correctamente el **clon**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1034-1.png?raw=true">
-
-Volvemos nuevamente a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Commands**
-* Plantilla de trabajo: **Backup etc directory User 1**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1034-2.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1034-3.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1034-4.png?raw=true">
 
 ## Laboratorio de la Unidad
 <br>1. Ejecutar una tarea remota utilizando la opción de comandos ssh que realice el backup del directorio /etc y lo envié al directorio /tmp, el formato del backup será etc_$(date +%d%m%Y%H%M%S).tar.xz.
