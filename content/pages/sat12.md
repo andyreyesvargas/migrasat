@@ -188,62 +188,13 @@ Oct 19 14:58:16 client.migraciones09.gob.pe systemd[1]: Started The Apache HTTP 
 
 
 ## Laboratorio de la Unidad
-<br>1. Ejecutar una tarea remota utilizando la opción de comandos ssh que realice el backup del directorio /etc y lo envié al directorio /tmp, el formato del backup será etc_$(date +%d%m%Y%H%M%S).tar.xz.
+<br>1. Ejecutar las siguientes tareas remotas en el client de su infraestructura
+<br>  - Usando los commands "cat /etc/redhat-release > /root/version"
+<br>  - Usando Ansible "uname -r > /root/kernel"
 
-Pista:
-* Categoría de trabajo: **Commands**
-* Plantilla de trabajo: **Run Command - SSH Default**
-* command: **tar -cJvf /tmp/etc_$(date +%d%m%Y%H%M%S).tar.xz /etc**
+<br>2. Crear y ejecutar la siguiente plantilla de comando: tar -czvf /tmp/backup.etc.$(date +"%Y%m%d%H%M%S").tar.gz /etc/*
+<br>3. Crear y ejecutar la siguiente plantilla de Ansible: ftp://ftp.migraciones.gob.pe/install_apache.yml
 
-<br>2. Validar utilizando los comandos de ejecución remota por ssh que el directorio /tmp contenga el backup generado en el punto 1.
-
-Pista:
-* Categoría de trabajo: **Commands**
-* Plantilla de trabajo: **Run Command - SSH Default**
-* command: **ls -l /tmp**
-
-<br>3. Utilizando comandos de ejecución remota ssh descomprimir el backup generado en el punto 1 dentro de /var/tmp.
-
-Pista:
-* Categoría de trabajo: **Commands**
-* Plantilla de trabajo: **Run Command - SSH Default**
-* command: **tar -xJvf /tmp/etc_15042022144059.tar.xz -C /var/tmp**  << cambiar por el nombre de su backup
-
-**NOTA: En el punto 2 podrá visualizar exactamente cual es el nombre de su archivo de backup tomando su actual, ese valor reemplazarlo por el indicado en la pista. Adicionalmente utilizar el comando ls -lR /var/tmp/etc/ para validar que se haya desempaquetado el backup de manera correcta, utilizar para la validación comando de ejecución remota vía Red Hat Satellite**
-
-<br>4. Utilizando comandos de ejecución remota ansible instalar los siguientes paquetes de software: net-tools, bind-utils, sos, tree, vim, tmux, lsof.
-
-Pista
-* Categoría de trabajo: **Ansible Packages**
-* Plantilla de trabajo: **Package Action - Ansible Default**
-* state: **present**
-* name: **net-tools, bind-utils, sos, tree, vim, tmux, lsof**
-
-<br>5. Utilizando comandos de ejecución remota ansible valide que los paquetes instalados en el punto 4 se encuentran instalados correctamente.
-
-Pista
-* Categoría de trabajo: **Ansible Commands**
-* Plantilla de trabajo: **Run Command - Ansible Default**
-* command: **rpm -qa | grep -e net-tools -e bind-utils -e sos -e tree -e vim -e tmux -e lsof**
-
-<br>6. Utilizando el contenido del script ubicado en ftp://192.168.100.203/bash/backup.sh crear una plantilla de trabajo que tenga la siguiente información:
-
-Pista:
-Tab Plantilla
-* Nombre de la plantilla: **Backup etc directory User X**
-* Contenido de la plantilla: Información ubicada en el script **backup.sh**
-
-Tab Empleo
-* Categoría de trabajo: Commands
-* Provider Type: SSH
-
-<br>7. Ejecutar la plantilla creado en el punto 6 y validar que haya generado el backup correspondiente.
-Pista:
-* Categoría de trabajo: **Commands**
-* Plantilla de trabajo: **Backup etc directory User X**
-
-**NOTA: Para validar que el script se genero de manera correcta puede ejecutar una tarea remota de tipo comando SSH o comando ansible que contenga el comando: ls -l /backups**
-
-<br>
+**Nota: verifique todos los trabajos remotos en el cliente**
 
 <p><br><a href="sat.md">volver</a></p>
