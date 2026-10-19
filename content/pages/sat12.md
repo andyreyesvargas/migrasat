@@ -11,10 +11,8 @@
 <p>
 <strong>Secciones:</strong>
 <br>- Pre-requisitos para utilizar ejecución remota en Red Hat Satellite. (Demostrativo)
-<br>- Ejecución de comandos remotos vía comandos SSH. (Demostrativo)
-<br>- Ejecución de comandos remotos vía comandos Ansible . (Demostrativo)
-<br>- Ejecución de comandos remotos utilizando bash shell scripting. (Demostrativo)
-<br>- Laboratorio: Crear repositorio personalizado con llave de contenido personalizada y plan de sincronizacion programado de canal base.
+<br>- Ejecutar comandos remotos via Red Hat Satellite. (Demostrativo)
+<br>- Utilizando plantillas de ejecución remota en Red Hat Satellite. (Demostrativo)
 </p>
 <p>
 <strong>Laboratorios:</strong>
