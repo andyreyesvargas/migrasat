@@ -24,6 +24,87 @@
 Para crear un rol de ansible a traves de Satellite, primero se debe ingresar a la sección
 <p align="left"><img src="../images/sat196.png?raw=true">
 
+Como el sistema no tiene roles cargados, ingresamos al terminal al servidor satellite y descargamos del ftp del salon el motd-role.tar.gz para enviarlo a la ruta de roles
+```
+[root@satellite ~]# wget ftp://ftp.migraciones.gob.pe/motd-role.tar.gz
+--2026-10-19 16:22:41--  ftp://ftp.migraciones.gob.pe/motd-role.tar.gz
+           => ‘motd-role.tar.gz’
+motd-role.tar.gz         100%[=================================>]   1.99K  --.-KB/s    in 0s
+2026-10-19 16:22:41 (116 MB/s) - ‘motd-role.tar.gz’ saved [2041]
+
+[root@satellite ~]# tar -xzvf motd-role.tar.gz
+[root@satellite ~]# mv motd /etc/ansible/roles/
+```
+
+Ahora si podemos importar el rol de ansible
+<p align="left"><img src="../images/sat197.png?raw=true">
+
+Seleccionamos el rol de motd
+<p align="left"><img src="../images/sat198.png?raw=true">
+
+La documentacion del role indica que el mensaje customizado será enviado a traves de la variables new_var, por ello ingresamos a variables
+<p align="left"><img src="../images/sat199.png?raw=true">
+
+Definimos la nueva variable
+<p align="left"><img src="../images/sat200.png?raw=true">
+
+Ingresamos los datos de la variable y a que rol estara asociado
+<p align="left"><img src="../images/sat201.png?raw=true">
+
+Verificamos la creación de la variables
+<p align="left"><img src="../images/sat202.png?raw=true">
+
+En el cliente ingresamos a la seccion de Ansible y asignamos directamente un rol
+<p align="left"><img src="../images/sat203.png?raw=true">
+
+Seleccionamos el rol motd
+<p align="left"><img src="../images/sat204.png?raw=true">
+
+Confirmamos el rol
+<p align="left"><img src="../images/sat205.png?raw=true">
+
+En los parametros agregamos la variables del tipo cadena/string con un texto que identifique nuestro equipo
+<p align="left"><img src="../images/sat206.png?raw=true">
+
+Ejecutamos los roles de Ansible
+<p align="left"><img src="../images/sat207.png?raw=true">
+
+Con la ejecución del rol, vemos si el cliente ahora cuenta con un /etc/motd con el mensaje customizado, para ello simplemente iniciamos sesión via terminal ssh
+```
+login as: root
+root@192.168.109.11's password:
+Este es un ejemplo de /etc/motd creado durante el workshop utilizando Ansible y Satellite.
+
+Este es un ejemplo de variable new_var: Migraciones Alumno 09
+Last login: Mon Oct 19 16:38:36 2026 from 192.168.109.97
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Descargar en el servidor cliente la siguiente plantilla de ansible playbook
