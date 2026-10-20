@@ -81,7 +81,144 @@ Last login: Mon Oct 19 16:38:36 2026 from 192.168.109.97
 
 ## Ejecución de ansible roles en host-groups. (Demostrativo)
 
-Considerando que las politicas de seguridad se aplican por ambientes o función primaria de servicios, podemos definir la ejecucion de roles por host-groups, para que sean aplicados a todos los clientes registrados en el servidor
+Considerando que las politicas de seguridad se aplican por ambientes o función primaria de servicios, podemos definir la ejecucion de roles por host-groups, para que sean aplicados a todos los clientes registrados en el servidor, primero preparamos los roles
+<p align="left"><img src="../images/sat208.png?raw=true">
+
+Desde el servidor satellite, importamos el rol de satellite desde el recurso ftp://ftp.migraciones.gob.pe/ansible-role-chrony.tar.gz
+```
+[root@satellite ~]# wget ftp://ftp.migraciones.gob.pe/ansible-role-chrony.tar.gz
+--2026-10-19 21:57:13--  ftp://ftp.migraciones.gob.pe/ansible-role-chrony.tar.gz
+           => ‘ansible-role-chrony.tar.gz’
+ansible-role-chrony.tar. 100%[=================================>]  10.84K  --.-KB/s    in 0s
+2026-10-19 21:57:13 (197 MB/s) - ‘ansible-role-chrony.tar.gz’ saved [11104]
+
+[root@satellite ~]# tar -xzvf ansible-role-chrony.tar.gz
+[root@satellite ~]# mv ansible-role-chrony /etc/ansible/roles/
+```
+
+Con el rol en la ruta de ansible, podemos importarlo a la plataforma satellite
+<p align="left"><img src="../images/sat209.png?raw=true">
+
+Seleccionamos el rol
+<p align="left"><img src="../images/sat210.png?raw=true">
+
+Ingresamos a la sección de variables
+<p align="left"><img src="../images/sat211.png?raw=true">
+
+Examinamos las posibles variables que podemos customizar en el futuro
+<p align="left"><img src="../images/sat212.png?raw=true">
+
+Ingresamos al HG de PROD de RHEL9 para aplicar el rol a todos los sistemas clientes registrados en el
+<p align="left"><img src="../images/sat213.png?raw=true">
+
+Em Ansible roles seleccionamos el role que queremos activar
+<p align="left"><img src="../images/sat214.png?raw=true">
+
+En parametros agregamos dos nuevos, uno para el pool que dejaremos en blanco y otro en server que pondremos el servidor ntp.migraciones.gob.pe
+<p align="left"><img src="../images/sat215.png?raw=true">
+
+Con el HG modificado, podemos registrar el cliente en el HG para ello generamos el script de registros
+<p align="left"><img src="../images/sat216.png?raw=true">
+
+Como el sistema ya esta registrado en otro HG, lo liberamos y re-registramos con el nuevo script
+```
+[root@client ~]# subscription-manager unregister
+This system is currently not registered.
+[root@client ~]# subscription-manager remove --all
+0 subscriptions removed from this system.
+[root@client ~]# subscription-manager clean
+All local data removed
+[root@client ~]# set -o pipefail && curl --silent --show-error  --insecure 'https://satellite.migraciones09.gob.pe/register?download_utility=curl&hostgroup_id=3&location_id=2&operatingsystem_id=3&organization_id=1&update_packages=false' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJpYXQiOjE3OTI0NjQ0NDcsImp0aSI6IjNjZjIwYTVhNjQ1YjVmOTcyMTEzMDkwNzBjMTExNTI0NTI0ZmJjMDY0NDQ5NDMxYzVjMmI1ZjQ1MTJjMTYzNzUiLCJleHAiOjE3OTI0Nzg4NDcsInNjb3BlIjoicmVnaXN0cmF0aW9uI2dsb2JhbCByZWdpc3RyYXRpb24jaG9zdCJ9.LzDu6rKo3yXrez2NYZ_v0l9bF3uU2jMBCpdY4MPog5U' | bash
+#
+# Running registration
+#
+subscription-manager is already installed!
+The system has been registered with ID: 5fef8f8a-25f7-4d49-b034-090645468d8a
+The registered system name is: client.migraciones09.gob.pe
+# Running [client.migraciones09.gob.pe] host initial configuration
+/usr/sbin/restorecon
+#
+# Installing Insights client
+#
+Updating Subscription Management repositories.
+Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)                 78 kB/s | 3.8 kB     00:00
+Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)              116 kB/s | 4.1 kB     00:00
+Package insights-client-3.9.3-1.el9.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+This host has already been registered.
+Automatic scheduling for Insights has been enabled.
+Starting to collect Insights data for client.migraciones09.gob.pe
+Writing RHSM facts to /etc/rhsm/facts/insights-client.facts ...
+Uploading Insights data.
+Successfully uploaded report from client.migraciones09.gob.pe to account 5257369.
+Refreshing subscription data
+All local data refreshed
+Successfully updated the system facts.
+Host [client.migraciones09.gob.pe] successfully configured.
++----------------------------------------------------------+
+    Available Repositories in /etc/yum.repos.d/redhat.repo
++----------------------------------------------------------+
+Repo ID:   satellite-client-6-for-rhel-9-x86_64-rpms
+Repo Name: Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)
+Repo URL:  https://satellite.migraciones09.gob.pe/pulp/content/Migraciones/PROD/CV_PROD_RHEL9/conte
+           nt/dist/layered/rhel9/x86_64/sat-client/6/os
+Enabled:   1
+
+Repo ID:   rhel-9-for-x86_64-baseos-rpms
+Repo Name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
+Repo URL:  https://satellite.migraciones09.gob.pe/pulp/content/Migraciones/PROD/CV_PROD_RHEL9/conte
+           nt/dist/rhel9/9/x86_64/baseos/os
+Enabled:   1
+
+Repo ID:   rhel-9-for-x86_64-appstream-rpms
+Repo Name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
+Repo URL:  https://satellite.migraciones09.gob.pe/pulp/content/Migraciones/PROD/CV_PROD_RHEL9/conte
+           nt/dist/rhel9/9/x86_64/appstream/os
+Enabled:   1
+```
+
+Ahora en el HG, ejecutamos todos los roles
+<p align="left"><img src="../images/sat217.png?raw=true">
+
+Verificamos que el role se ejecute correctamente
+<p align="left"><img src="../images/sat218.png?raw=true">
+
+Podemos examinar el cliente y el status del servicio chrony
+```
+```
+[root@client ~]# cat /etc/chrony.conf
+# Do not manually edit this file.
+# Managed by ansible-role-chrony
+server ntp.migraciones.gob.pe iburst minpoll 6 maxpoll 10
+bindcmdaddress 127.0.0.1
+bindcmdaddress ::1
+deny all
+driftfile /var/lib/chrony/drift
+logdir /var/log/chrony
+rtcsync
+makestep 1.0 3
+[root@client ~]# chronyc sources
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^? ntp.migraciones.gob.pe        0   7     0     -     +0ns[   +0ns] +/-    0ns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
