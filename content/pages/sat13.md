@@ -187,7 +187,6 @@ Verificamos que el role se ejecute correctamente
 
 Podemos examinar el cliente y el status del servicio chrony
 ```
-```
 [root@client ~]# cat /etc/chrony.conf
 # Do not manually edit this file.
 # Managed by ansible-role-chrony
@@ -203,7 +202,7 @@ makestep 1.0 3
 MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
 ^? ntp.migraciones.gob.pe        0   7     0     -     +0ns[   +0ns] +/-    0ns
-
+```
 
 
 
