@@ -204,220 +204,108 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ^? ntp.migraciones.gob.pe        0   7     0     -     +0ns[   +0ns] +/-    0ns
 ```
 
+## Creación de roles de ansible. (Demostrativo)
+
+Para crear un rol de ansible ingresamos al servidor satellite y preparamos la base de directorios y archivos para crear un rol que instale el servidor ftp
+```
+[root@satellite ~]# cd /etc/ansible/roles/
+[root@satellite roles]# ansible-galaxy init ftp-custom
+- Role ftp-custom was created successfully
+[root@satellite roles]# vi ftp-custom/tasks/main.yml
+---
+# tasks file for ftp-custom
+- name: Asegurar que vsftpd esté instalado
+  ansible.builtin.dnf:
+     name: vsftpd
+     state: present
+
+- name: Asegurar que vsftpd esté iniciado y habilitado en el arranque
+  ansible.builtin.service:
+     name: vsftpd
+     state: started
+     enabled: true
+
+- name: Asegurar que el cliente esté instalado
+  ansible.builtin.dnf:
+     name: ftp
+     state: present
+
+- name: Copiar archivo en pub
+  ansible.builtin.copy:
+    src: hello.txt
+    dest: /var/ftp/pub/hello.txt
+    mode: 644
+    owner: root
+    group: root
+
+- name: Activar autenticacion anonima
+  ansible.builtin.lineinfile:
+    path: /etc/vsftpd/vsftpd.conf
+    regexp: 'anonymous_enable=NO'
+    line: 'anonymous_enable=YES'
+
+- name: Reiniciar vsftpd
+  ansible.builtin.service:
+     name: vsftpd
+     state: restarted
+
+[root@satellite roles]# vi ftp-custom/files/hello.txt
+FTP Migraciones
+```
+
+Ahora importamos el rol en el servidor satellite
+<p align="left"><img src="../images/sat219.png?raw=true">
+
+Seleccionamos el nuevo role ftp-custom y lo importamos
+<p align="left"><img src="../images/sat220.png?raw=true">
+
+Agregamos el role de ansible en el host client
+<p align="left"><img src="../images/sat221.png?raw=true">
+
+Aplicamos el role
+<p align="left"><img src="../images/sat222.png?raw=true">
+
+Ejecutamos el role de ansible
+<p align="left"><img src="../images/sat223.png?raw=true">
+
+Verificamos que se ejecute el role
+<p align="left"><img src="../images/sat224.png?raw=true">
+
+Podemos verificar con el terminal en el cliente que se creo el servidor FTP con una conexion local y descargando el archivo del role hello.txt
+```
+[root@client ~]# ftp localhost
+Trying ::1...
+Connected to localhost (::1).
+220 (vsFTPd 3.0.5)
+Name (localhost:root): ftp
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> cd pub
+250 Directory successfully changed.
+ftp> dir
+229 Entering Extended Passive Mode (|||42602|)
+150 Here comes the directory listing.
+-rw-r--r--    1 0        0              30 Oct 26 16:00 hello.j2
+--w----r-T    1 0        0              16 Oct 26 16:44 hello.txt
+226 Directory send OK.
+ftp> get hello.txt
+local: hello.txt remote: hello.txt
+229 Entering Extended Passive Mode (|||13464|)
+150 Opening BINARY mode data connection for hello.txt (16 bytes).
+226 Transfer complete.
+16 bytes received in 4.1e-05 secs (390.24 Kbytes/sec)
+ftp> exit
+221 Goodbye.
+[root@client ~]# cat hello.txt
+FTP Migraciones
+```
 
 ## Laboratorio de la unidad
 
 Descargar en el servidor cliente la siguiente plantilla de ansible playbook
 ```
-# wget ftp://192.168.100.203/ansible/ansible-role-motd.tgz
-# tar -zxvf ansible-role-motd.tgz
-```
-Inspeccionar el contenido de los archivos y discutir.
-
-Dentro del servidor satellite se puede generar un esqueleto de un ansible rol con el siguiente comando:
-```
-[root@satellite roles]# cd /etc/ansible/roles
-[root@satellite roles]# ansible-galaxy init workshop-role
-- Role workshop-role was created successfully
-[root@satellite roles]# ls -l  workshop-role/
-total 4
-drwxr-xr-x. 2 root root   22 Apr 18 22:16 defaults
-drwxr-xr-x. 2 root root    6 Apr 18 22:16 files
-drwxr-xr-x. 2 root root   22 Apr 18 22:16 handlers
-drwxr-xr-x. 2 root root   22 Apr 18 22:16 meta
--rw-r--r--. 1 root root 1328 Apr 18 22:16 README.md
-drwxr-xr-x. 2 root root   22 Apr 18 22:16 tasks
-drwxr-xr-x. 2 root root    6 Apr 18 22:16 templates
-drwxr-xr-x. 2 root root   39 Apr 18 22:16 tests
-drwxr-xr-x. 2 root root   22 Apr 18 22:16 vars
-```
-
-Para importar un rol utilizar las opciones **Configurar > Roles**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1050.png?raw=true">
-
-En la pantalla de Ansible Roles darle click al botón **Import from satellite.opennova.pe**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1051.png?raw=true">
-
-Seleccionar los roles que desee importar y darle al botón **Submit**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1052.png?raw=true">
-
-Visualizar en la pagina de Ansible Roles que se muestren los roles seleccionados.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1053.png?raw=true">
-
-Para importar o crear una variable de ansible seleccionar **Configurar > Variables**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1054.png?raw=true">
-
-En la pagina de Ansible Variables seleccionar **New Ansible Variable**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1055.png?raw=true">
-
-En la seccion de **Ansible Variable Details** ingresar la siguiente información:
-
-* Clave De Busqueda|Clave: **new_var**
-* Ansible Role: **motd**
-
-En la seccion de Comportamiento predeterminado ingresar la siguiente información:
-* Clave De Busqueda|Anular: **darle click a la casilla para activar.**
-* Parameter Type: **cadena**
-* Valor Predeterminado: **Bienvenido al Workshop Red Hat Satellite!**
-
-y darle click al botón **enviar**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1056.png?raw=true">
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1057.png?raw=true">
-
-Validar que en la pagina de **Ansible Variables**, se muestre la variable **new_var**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1058.png?raw=true">
-
-En la opción **Hosts > Todo los hosts** seleccionar el nombre de la maquina cliente.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1059.png?raw=true">
-
-Seleccionar la opción **Editar**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1060.png?raw=true">
-
-En el tab de **Ansible Roles** seleccionar el rol **motd**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1061.png?raw=true">
-
-Seleccionar de la lista de **Programar trabajo remoto** la opción **Run Ansible roles**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1062.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1063.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1064.png?raw=true">
-
-Volvemos a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Ansible Commands**
-* Plantilla de trabajo: **Run Command - Ansible Default**
-* command: **cat /etc/motd**
-
-y le damos **click** al botón **enviar**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1065.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1066.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1067.png?raw=true">
-
-Simular un logeo y validar que podamos visualizar el banner correspondiente en el cliente ejecutando:
-```
-# ssh root@client01
-# cat /etc/motd
-Este es un ejemplo de /etc/motd creado durante el workshop utilizando Ansible y Satellite.
-
-Este es un ejemplo de variable enviada a través de Satellite: Bienvenido al Workshop Red Hat Satellite!
-```
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1068.png?raw=true">
-
-Si queremos que la variable no sea aplicada globalmente podemos entrar a la seccion de **Configurar > Variables**, seleccionar la variable **new_var** y en la seccion de **Comportamiento predeterminado** des-seleccionar la opción de **Clave de Busqueda|Anular** y darle click al botón enviar.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1069.png?raw=true">
-
-Entramos a la opción de Editar de nuestro cliente y dentro del Tab de Parámetros ingresamos:
-
-Seccion Parámetros de Host
-
-* new_var: cadena : Bienvenido al Workshop Red Hat Satellite! - Ejecución remota Ansible Roles!
-
-y le damos click al botón **enviar**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1070.png?raw=true">
-
-Seleccionamos de la lista de **Programar trabajo remoto** la opción **Run Ansible Roles**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1071.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1072.png?raw=true">
-
-Volvemos a la opción de Programación de tareas remotas dentro de la siguiente casilla seleccionaremos:
-
-* Categoría de trabajo: **Ansible Commands**
-* Plantilla de trabajo: **Run Command - Ansible Default**
-* command: **cat /etc/motd**
-
-y le damos click al botón **enviar**.
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1073.png?raw=true">
-
-Observar que la tarea haya finalizado de forma correcta con **100% Éxito**
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1074.png?raw=true">
-
-En la parte inferior sobre el nombre del cliente darle **click** al nombre en **host** para verlos detalles
-
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1075.png?raw=true">
-
-Simular un logeo y validar que podamos visualizar el banner correspondiente en el cliente ejecutando:
-```
-# ssh root@client01
-# cat /etc/motd
-Este es un ejemplo de /etc/motd creado durante el workshop utilizando Ansible y Satellite.
-
-Este es un ejemplo de variable enviada a través de Satellite: Bienvenido al Workshop Red Hat Satellite! - Ejecucion Remota Ansible Roles!
-```
-<p align="left"><img src="https://github.com/workshopopennova/tecnologiasredhat/blob/master/images/sat/sat1076.png?raw=true">
-
-### Laboratorio
-1. Con el contenido de ftp://192.168.100.203/ansible/playbook-workshop.yml crear una plantilla que contenga la siguiente información:
-**Pista:**
-Dentro del Tab Plantilla ingresar:
-
-* Plantilla De Trabajo|Nombre: **Custom SSH Banner User X**
-* En el editor: Copiar y pegar el **contenido** del **playbook-workshop.yml**
-
-Dentro del tab Entradas:
-
-* Agregar entrada
-
-Dentro del tab Entradas ingresar:
-
-* Template Input|Name: **banner_var**
-
-Dentro del tab Empleo ingresar:
-
-* Categoría de trabajo: **Ansible Playbook**
-* Provider Type: **Ansible**
-
-2. Ejecutar la plantilla ansible en el cliente asignado y verificar que el banner ssh este correctamente configurado.
-
-3. Importar el rol motd_X dentro de Red Hat Satellite, el cual deberá contener una variable con la siguiente información:
-**Pista:**
-En la seccion de **Ansible Variable Details** ingresar la siguiente información:
-
-* Clave De Busqueda|Clave: **new_var**
-* Ansible Role: **motd_X**
-
-En la seccion de Comportamiento predeterminado ingresar la siguiente información:
-* Clave De Busqueda|Anular: **darle click a la casilla para activar.**
-* Parameter Type: **cadena**
-* Valor Predeterminado: **Bienvenido al Workshop Red Hat Satellite! creado por User X**
-
-y darle click al botón **enviar**.
-
-4. Editar el cliente asignado y seleccionar solamente su rol motd_X y ejecutar el rol respectivo.
-
-5. Validar vía ejecución remota y terminal que el archivo /etc/motd contenga el valor de: **Bienvenido al Workshop Red Hat Satellite! creado por User X**
 
 <p><br><a href="sat.md">volver</a></p>
