@@ -288,7 +288,6 @@ ftp> cd pub
 ftp> dir
 229 Entering Extended Passive Mode (|||42602|)
 150 Here comes the directory listing.
--rw-r--r--    1 0        0              30 Oct 26 16:00 hello.j2
 --w----r-T    1 0        0              16 Oct 26 16:44 hello.txt
 226 Directory send OK.
 ftp> get hello.txt
