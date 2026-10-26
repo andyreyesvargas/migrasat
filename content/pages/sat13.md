@@ -10,9 +10,9 @@
 </p>
 <p>
 <strong>Secciones:</strong>
-<br>- Ejecución de comandos remotos vía ansible playbooks. (Demostrativo)
-<br>- Ejecución de comandos remotos vía ansible roles. (Demostrativo)
-<br>- Laboratorio: Ejecución de tareas remotas con ansible playbooks y ansible roles
+<br>- Ejecución de ansible roles en hosts. (Demostrativo)
+<br>- Ejecución de ansible roles en host-groups. (Demostrativo)
+<br>- Creación de roles de ansible. (Demostrativo)
 </p>
 <p>
 <strong>Laboratorios:</strong>
@@ -304,7 +304,9 @@ FTP Migraciones
 
 ## Laboratorio de la unidad
 
-Descargar en el servidor cliente la siguiente plantilla de ansible playbook
-```
+<br>Con lo aprendio en clase:
+<br> - Cree el rol de MOTD para ejecutarlo en su client con una variable que haga referencia a su número de alumno, este rol se aplicara directamente al host
+<br> - Cree el rol que permita configurar el servidor de NTP ntp.migraciones.gob.pe con roles de ansible que se aplique a todo el ambiente de PROD RHEL9
+<br> - Cree y ejecute el rol customizado para crear el servidor FTP con un archivo de ejemplo
 
 <p><br><a href="sat.md">volver</a></p>
