@@ -305,8 +305,9 @@ FTP Migraciones
 ## Laboratorio de la unidad
 
 <br>Con lo aprendio en clase:
+<br>
 <br> - Cree el rol de MOTD para ejecutarlo en su client con una variable que haga referencia a su número de alumno, este rol se aplicara directamente al host
-<br> - Cree el rol que permita configurar el servidor de NTP ntp.migraciones.gob.pe con roles de ansible que se aplique a todo el ambiente de PROD RHEL9
+<br> - Cree el rol que permita configurar el servidor de NTP ntp.migraciones.gob.pe con roles de ansible que se aplique a todo el ambiente de PROD RHEL9(migre el sistema al ENV de PROD)
 <br> - Cree y ejecute el rol customizado para crear el servidor FTP con un archivo de ejemplo
 
 <p><br><a href="sat.md">volver</a></p>
