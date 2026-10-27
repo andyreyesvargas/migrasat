@@ -19,7 +19,7 @@
 </p>
 </p>
 
-## Ejecución de ansible roles en hosts. (Demostrativo)
+## Habilitación de Red Hat Insights en servidor Satellite. (Demostrativo)
 
 Para crear un rol de ansible a traves de Satellite, primero se debe ingresar a la sección
 <p align="left"><img src="../images/sat196.png?raw=true">
