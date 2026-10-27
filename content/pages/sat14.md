@@ -1,12 +1,12 @@
-<h1>Gestión de ejecución remota con ansible vía Red Hat Satellite</h1>
+<h1>Gestión de Red Hat Insights</h1>
 <p align="left"><img src="../images/sat.png?raw=true"></p>
 <p>
 <strong>Meta:</strong>
-<br>- Entendimiento de la gestión de ejecución remota con ansible vía Red Hat Satellite.
+<br>- Entendimiento de la gestión Gestión de Red Hat Insights.
 </p>
 <p>
 <strong>Objetivos:</strong>
-<br>- Identificación y administración de opciones de ejecución remota con ansible en Red Hat Satellite (Demostración)
+<br>- Identificación y administración de opciones de ejecución de Red Hat Insights (Demostración)
 </p>
 <p>
 <strong>Secciones:</strong>
