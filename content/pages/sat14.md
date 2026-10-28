@@ -10,9 +10,7 @@
 </p>
 <p>
 <strong>Secciones:</strong>
-<br>- Ejecución de ansible roles en hosts. (Demostrativo)
-<br>- Ejecución de ansible roles en host-groups. (Demostrativo)
-<br>- Creación de roles de ansible. (Demostrativo)
+<br>- Habilitación de Red Hat Insights en servidor Satellite. (Demostrativo)
 </p>
 <p>
 <strong>Laboratorios:</strong>
