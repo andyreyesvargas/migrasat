@@ -338,6 +338,7 @@ crond
 --------------------------------------------------------------------------------
 ```
 
+Verificamos que el contenido borrado sea restaurado
 
 <p><br><a href="sat.md">volver</a></p>
 
