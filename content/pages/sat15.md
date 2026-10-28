@@ -72,6 +72,10 @@ Revisamos y analisamos el reporte
 <p align="left"><img src="../images/sat250.png?raw=true">
 
 
+## Politica de seguridad de OpenSCAP customizada con Satellite. (Demostrativo)
+
+Para empezar ingresamos a la sección de hosts, cumplimientos y contenidos de scap
+<p align="left"><img src="../images/sat233.png?raw=true">
 
 
 
