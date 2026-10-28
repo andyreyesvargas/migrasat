@@ -1,8 +1,8 @@
-<h1>Gestión de Red Hat Insights</h1>
+<h1>Gestión de Políticas de Seguridad Openscap</h1>
 <p align="left"><img src="../images/sat.png?raw=true"></p>
 <p>
 <strong>Meta:</strong>
-<br>- Entendimiento de la gestión Gestión de Red Hat Insights.
+<br>- Entendimiento de la Gestión de Políticas de Seguridad Openscap.
 </p>
 <p>
 <strong>Objetivos:</strong>
