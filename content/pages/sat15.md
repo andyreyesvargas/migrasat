@@ -159,5 +159,185 @@ Evaluamos a detalle el nuevo informe
 <br> - Cree la politica de openscap para obtener el reporte customizado con el tailoring de CIS Red Hat Enterprise Linux 9 Benchmark for Level 2 - Server para controles de AIDE
 <br> - Remedie los controles de aide del punto anterior y genere un nuevo reporte customizado
 
+## Backup y Restore de Satellite. (Demostrativo)
+Realice un backup offline de la plataforma, no es necesario respaldar el contenido de pulp ya que puede ser resincronizado desde la web de redhat
+```
+[root@satellite ~]# mkdir /var/backup
+[root@satellite ~]# satellite-maintain backup offline --skip-pulp-content /var/backup
+Starting backup: 2026-10-28 16:37:22 -0500
+Running preparation steps required to run the next scenarios
+================================================================================
+Make sure Foreman DB is up:
+/ Checking connection to the Foreman DB                               [OK]
+--------------------------------------------------------------------------------
+Make sure Candlepin DB is up:
+\ Checking connection to the Candlepin DB                             [OK]
+--------------------------------------------------------------------------------
+Make sure Pulpcore DB is up:
+- Checking connection to the Pulpcore DB                              [OK]
+--------------------------------------------------------------------------------
+
+
+Running Backup
+================================================================================
+Make sure Foreman DB indexes are OK:                                  [OK]
+--------------------------------------------------------------------------------
+Make sure Candlepin DB indexes are OK:                                [OK]
+--------------------------------------------------------------------------------
+Make sure Pulpcore DB indexes are OK:                                 [OK]
+--------------------------------------------------------------------------------
+Check for running tasks:                                              [OK]
+--------------------------------------------------------------------------------
+Check for running pulpcore tasks:                                     [OK]
+--------------------------------------------------------------------------------
+Confirm turning off services is allowed:
+WARNING: This script will stop your services.
+
+Do you want to proceed?, [y(yes), q(quit)] y
+                                                                      [OK]
+--------------------------------------------------------------------------------
+Prepare backup Directory:
+Creating backup folder /var/backup/satellite-backup-2026-10-28-16-37-22
+                                                                      [OK]
+--------------------------------------------------------------------------------
+Generate metadata:
+| Saving metadata to metadata.yml                                     [OK]
+--------------------------------------------------------------------------------
+Detect features available in the local proxy:                         [OK]
+--------------------------------------------------------------------------------
+Stop applicable services:
+
+Stopping the following service(s):
+redis, postgresql, pulpcore-api, pulpcore-content, pulpcore-worker@1.service, pulpcore-worker@2.service, tomcat, pulpcore-api.socket, pulpcore-content.socket, dynflow-sidekiq@orchestrator, foreman, httpd, foreman.socket, dynflow-sidekiq@worker-1, dynflow-sidekiq@worker-hosts-queue-1, foreman-proxy
+| All services stopped                                                [OK]
+--------------------------------------------------------------------------------
+Backup config files:
+- Collecting config files to backup                                   [OK]
+--------------------------------------------------------------------------------
+Backup Pulp data:                                                     [SKIPPED]
+--------------------------------------------------------------------------------
+Start applicable services:
+
+Starting the following service(s):
+postgresql
+\ All services started                                                [OK]
+--------------------------------------------------------------------------------
+Backup Candlepin database:
+\ Getting Candlepin DB dump                                           [OK]
+--------------------------------------------------------------------------------
+Backup Foreman database:
+- Getting Foreman DB dump                                             [OK]
+--------------------------------------------------------------------------------
+Backup Pulpcore database:
+\ Getting Pulpcore DB dump                                            [OK]
+--------------------------------------------------------------------------------
+Start applicable services:
+
+Starting the following service(s):
+redis, postgresql, pulpcore-api, pulpcore-content, pulpcore-worker@1.service, pulpcore-worker@2.service, tomcat, dynflow-sidekiq@orchestrator, foreman, httpd, dynflow-sidekiq@worker-1, dynflow-sidekiq@worker-hosts-queue-1, foreman-proxy
+| All services started                                                [OK]
+--------------------------------------------------------------------------------
+Compress backup data to save space:                                   [OK]
+--------------------------------------------------------------------------------
+
+Done with backup: 2026-10-28 16:40:53 -0500
+**** BACKUP Complete, contents can be found in: /var/backup/satellite-backup-2026-10-28-16-37-22 ****
+```
+
+Borramos algun elemento de satellite como los informes de openscap
+
+Restauramos la plataforma tomando como referencia el ultimo backup
+```
+[root@satellite ~]# satellite-maintain restore /var/backup/satellite-backup-2026-10-28-16-37-22
+Running preparation steps required to run the next scenarios
+================================================================================
+Make sure Candlepin DB is up:
+/ Checking connection to the Candlepin DB                             [OK]
+--------------------------------------------------------------------------------
+Make sure Foreman DB is up:
+- Checking connection to the Foreman DB                               [OK]
+--------------------------------------------------------------------------------
+Make sure Pulpcore DB is up:
+- Checking connection to the Pulpcore DB                              [OK]
+--------------------------------------------------------------------------------
+
+
+Running Restore backup
+================================================================================
+Check if command is run as root user:                                 [OK]
+--------------------------------------------------------------------------------
+Validate backup has appropriate files:                                [OK]
+--------------------------------------------------------------------------------
+Validate hostname is the same as backup:                              [OK]
+--------------------------------------------------------------------------------
+Validate network interfaces match the backup:                         [OK]
+--------------------------------------------------------------------------------
+Validate permissions for PostgreSQL dumps:                            [OK]
+--------------------------------------------------------------------------------
+Confirm dropping databases and running restore:
+
+WARNING: This script will drop and restore your database.
+Your existing installation will be replaced with the backup database.
+Once this operation is complete there is no going back.
+Do you want to proceed?, [y(yes), q(quit)] y
+                                                                      [OK]
+--------------------------------------------------------------------------------
+Ensure required packages are installed before restore:                [OK]
+--------------------------------------------------------------------------------
+Restore configs from backup:
+/ Restoring configs                                                   [OK]
+--------------------------------------------------------------------------------
+Stop cron service:
+
+Stopping the following service(s):
+crond
+/ All services stopped                                                [OK]
+--------------------------------------------------------------------------------
+Run installer reset:
+/ Installer reset                                                     [OK]
+--------------------------------------------------------------------------------
+Stop applicable services:
+
+Stopping the following service(s):
+redis, postgresql, pulpcore-api, pulpcore-content, pulpcore-worker@1.service, pulpcore-worker@2.service, tomcat, pulpcore-api.socket, pulpcore-content.socket, dynflow-sidekiq@orchestrator, foreman, httpd, foreman.socket, dynflow-sidekiq@worker-1, dynflow-sidekiq@worker-hosts-queue-1, foreman-proxy
+\ All services stopped                                                [OK]
+--------------------------------------------------------------------------------
+Drop postgresql databases:
+/ Dropping pulpcore database                                          [OK]
+--------------------------------------------------------------------------------
+Start applicable services:
+
+Starting the following service(s):
+postgresql
+- All services started                                                [OK]
+--------------------------------------------------------------------------------
+Restore candlepin postgresql dump from backup:
+\ Restoring candlepin dump                                            [OK]
+--------------------------------------------------------------------------------
+Restore foreman postgresql dump from backup:
+| Restoring foreman dump                                              [OK]
+--------------------------------------------------------------------------------
+Restore pulpcore postgresql dump from backup:
+\ Restoring pulpcore dump                                             [OK]
+--------------------------------------------------------------------------------
+Stop applicable services:
+
+Stopping the following service(s):
+postgresql
+- All services stopped                                                [OK]
+--------------------------------------------------------------------------------
+Running satellite-installer :                                         [OK]
+--------------------------------------------------------------------------------
+Execute upgrade:run rake task:                                        [OK]
+--------------------------------------------------------------------------------
+Start cron service:
+
+Starting the following service(s):
+crond
+- All services started                                                [OK]
+--------------------------------------------------------------------------------
+```
+
+
 <p><br><a href="sat.md">volver</a></p>
 
