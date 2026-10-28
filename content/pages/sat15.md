@@ -155,7 +155,7 @@ Evaluamos a detalle el nuevo informe
 
 <br>Con lo aprendio en clase:
 <br>
-<br> - Cree la politica de openscap para obtener el reporte de controles de seguridad completo de  CIS Red Hat Enterprise Linux 9 Benchmark for Level 2 - Server
+<br> - Cree la politica de openscap para obtener el reporte completo de controles de seguridad completo de  CIS Red Hat Enterprise Linux 9 Benchmark for Level 2 - Server
 <br> - Cree la politica de openscap para obtener el reporte customizado con el tailoring de CIS Red Hat Enterprise Linux 9 Benchmark for Level 2 - Server para controles de AIDE
 <br> - Remedie los controles de aide del punto anterior y genere un nuevo reporte customizado
 
