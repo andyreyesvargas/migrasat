@@ -17,13 +17,63 @@
 </p>
 </p>
 
-## Habilitación de Red Hat Insights en servidor Satellite. (Demostrativo)
+## Politica de seguridad de OpenSCAP completa con Satellite. (Demostrativo)
 
-Para empezar con la integración, debemos importar algunos roles al sistema
-<p align="left"><img src="../images/sat225.png?raw=true">
+Para empezar ingresamos a la sección de hosts, cumplimientos y contenidos de scap
+<p align="left"><img src="../images/sat233.png?raw=true">
 
-Seleccionamos los roles
-<p align="left"><img src="../images/sat226.png?raw=true">
+Creamos un nuevo contenido de SCAP
+<p align="left"><img src="../images/sat234.png?raw=true">
+
+Nombramos el nuevo contenido y seleccionamos el archivo ssg-rhel9-ds.xml descargado desde ftp://ftp.migraciones.gob.pe/openscap/ssg-rhel9-ds.xml
+<p align="left"><img src="../images/sat235.png?raw=true">
+
+Verificamos la creación del nuevo contenido
+<p align="left"><img src="../images/sat236.png?raw=true">
+
+Ahora creamos una nueva politica para el analisis completo
+<p align="left"><img src="../images/sat237.png?raw=true">
+
+Creamos una nueva politica de cumplimiento
+<p align="left"><img src="../images/sat238.png?raw=true">
+
+Marcamos la politica como Ansible
+<p align="left"><img src="../images/sat239.png?raw=true">
+
+Nombreamos la politica
+<p align="left"><img src="../images/sat240.png?raw=true">
+
+Referenciamos la politica con el contenido de openscap anterior y seleccionamos el perfil CIS Red Hat Enterprise Linux 9 Benchmark for Level 2 - Server
+<p align="left"><img src="../images/sat241.png?raw=true">
+
+Se programa el escaneo semanalmente
+<p align="left"><img src="../images/sat242.png?raw=true">
+
+Asignamos la politica al HG de PROD en RHEL9
+<p align="left"><img src="../images/sat243.png?raw=true">
+
+Verificamos la polticia de cumplimiento
+<p align="left"><img src="../images/sat244.png?raw=true">
+
+En el HG, ejecutamos los roles de ansible para ejecutar las configuraciones de openscap
+<p align="left"><img src="../images/sat245.png?raw=true">
+
+Un script de ansible realizara la configuración
+<p align="left"><img src="../images/sat246.png?raw=true">
+
+En el cliente, ejecutamos el escaneo de openscap para generar el primer reporte
+<p align="left"><img src="../images/sat247.png?raw=true">
+
+Podemos revisar el reporte completo recien creado
+<p align="left"><img src="../images/sat248.png?raw=true">
+
+Revisamos y analisamos el reporte
+<p align="left"><img src="../images/sat249.png?raw=true">
+<p align="left"><img src="../images/sat250.png?raw=true">
+
+
+
+
 
 Ahora se puede ejecutar el proceso de registro del mismo satellite en la plataforma satellite, primero creamos un llave para la conexion del cliente
 ```
