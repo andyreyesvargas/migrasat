@@ -74,8 +74,59 @@ Revisamos y analisamos el reporte
 
 ## Politica de seguridad de OpenSCAP customizada con Satellite. (Demostrativo)
 
-Para empezar ingresamos a la sección de hosts, cumplimientos y contenidos de scap
-<p align="left"><img src="../images/sat233.png?raw=true">
+La customización de perfiles se hace a traves de los tailoring file de openscap, creamos uno nuevo
+<p align="left"><img src="../images/sat251.png?raw=true">
+
+Creamos el tailoring usando el archivo ssg-rhel9-ds-aide-tailoring.xml descargado del ftp://ftp.migraciones.gob.pe/openscap/ssg-rhel9-ds-aide-tailoring.xml
+<p align="left"><img src="../images/sat252.png?raw=true">
+
+Verificamos la creación de tailoring
+<p align="left"><img src="../images/sat253.png?raw=true">
+
+Ahora creamos una nueva politica de cumplimiento customizada
+<p align="left"><img src="../images/sat254.png?raw=true">
+
+Marcamos la politica como Ansible
+<p align="left"><img src="../images/sat255.png?raw=true">
+
+Nombramos la politica como customizada
+<p align="left"><img src="../images/sat256.png?raw=true">
+
+Asociamos la politica al contenido anterior y al nuevo tailoring creado
+<p align="left"><img src="../images/sat257.png?raw=true">
+
+Tambien la definimos como de ejecucion semanal
+<p align="left"><img src="../images/sat258.png?raw=true">
+
+La asociamos al HG de PROD de RHEL9
+<p align="left"><img src="../images/sat259.png?raw=true">
+
+En el HG ejecutamos los roles de ansible
+<p align="left"><img src="../images/sat260.png?raw=true">
+
+Esperamos que el script reconfigure el HG
+<p align="left"><img src="../images/sat261.png?raw=true">
+
+En el client corremos un escaneo de openscap
+<p align="left"><img src="../images/sat262.png?raw=true">
+
+Revisamos el nuevo reporte, ahora customizado con controles especificos
+<p align="left"><img src="../images/sat263.png?raw=true">
+
+Revisamos y analizamos el nuevo reporte a detalle
+<p align="left"><img src="../images/sat264.png?raw=true">
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
