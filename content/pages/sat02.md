@@ -403,7 +403,7 @@ pool ntp.migraciones.gob.pe iburst
 [root@satellite ~]# chronyc sources
 MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
-^? idm.migraciones.gob.pe        0   6     0     -     +0ns[   +0ns] +/-    0ns
+^? ntp.migraciones.gob.pe        0   6     0     -     +0ns[   +0ns] +/-    0ns
 ```
 
 **Nota: Para evitar problemas de perdida de conectividad hacia la terminar virtual se recomienda ejecutar el procedimiento de instalación por screen**
