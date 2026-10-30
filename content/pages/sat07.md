@@ -29,7 +29,7 @@ El instructor demostrara como crear un manifiesto de pruebas desde la pagina de 
 <p align="left"><img src="../images/sat56.png?raw=true"width="800" height="400"></p>
 
 # Asignando manifiestos a organizaciones. (Demostrativo)
-Antes de iniciar el proceso de asignar manifiestos a las organizaciones, el instructor compartirá en la ruta <strong>ftp://classroom.opennova.pe o ftp://192.168.100.203</strong> archivos de manifiestos para el curso
+Antes de iniciar el proceso de asignar manifiestos a las organizaciones, el instructor compartirá en la ruta <strong>ftp://ftp.migraciones.gob.pe en la carpeta manifiestos
 <p align="left"><img src="../images/sat57.png?raw=true"width="800" height="400"></p>
 
 Se compartirá algunos manifiestos de prueba en la ruta manifiestos
@@ -44,7 +44,7 @@ Ingresamos a la sección de CONTENIDO > SUSCRIPCIONES
 Procedemos a importar un manifiesto
 <p align="left"><img src="../images/sat61.png?raw=true"width="800" height="400"></p>
 
-Seleccionamos la opción de importar archivo y seleccionamos el archivo de manifiesto
+Seleccionamos la opción de importar archivo y seleccionamos el archivo de manifiesto default para la organización Migraciones
 <p align="left"><img src="../images/sat62.png?raw=true"width="800" height="400"></p>
 
 El sistema proceder a importar el manifiesto
