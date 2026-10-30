@@ -34,7 +34,7 @@ La herramienta hammer es el CLI de Red Hat Satellite, esta ya viene preconfigura
 
 Modificamos el archivo para incluir la directiva :use_sessions:
 ```
-[root@satellite ~]# vi /root/.hammer/cli.modules.d/foreman.yml ^C
+[root@satellite ~]# vi /root/.hammer/cli.modules.d/foreman.yml
 :foreman:
   # Credentials. You'll be asked for them interactively if you leave them blank here
   :username: 'admin'
