@@ -472,11 +472,11 @@ ID | NAME            | BUILTIN
 Listar el permiso **access dashboard**
 ```
 [root@satellite ~]# hammer filter available-permissions --search 'access_dashboard'
----|-----------------|--------
-ID | NAME            | BUILTIN
----|-----------------|--------
-34 | Database Admins | no
----|-----------------|--------
+----|------------------|----------------
+ID  | NAME             | RESOURCE
+----|------------------|----------------
+171 | access_dashboard | (Miscellaneous)
+----|------------------|----------------
 
 ```
 Asociar permiso **access_dashboard** a rol **Database Admins**
