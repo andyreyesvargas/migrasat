@@ -244,7 +244,7 @@ Done with backup: 2026-10-28 16:40:53 -0500
 **** BACKUP Complete, contents can be found in: /var/backup/satellite-backup-2026-10-28-16-37-22 ****
 ```
 
-Borramos algun elemento de satellite como los informes de openscap
+Borramos algun elemento de satellite
 
 Restauramos la plataforma tomando como referencia el ultimo backup
 ```
